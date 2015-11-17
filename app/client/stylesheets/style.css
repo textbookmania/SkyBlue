@@ -1,3 +1,37 @@
 body {
-  padding-top: 70px;  /* Move body of page below navbar. */
+  background-color: skyblue;
+}
+
+.header-image {
+  background-image: url('/images/textbook-logo.png');
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  background-position: 0px 0px;
+  background-color: #70E7FF;
+  height: 200px;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+
+.navbar-brand {
+  padding-left: 30px;
+}
+
+.dropdown-toggle {
+  padding-right: 30px;
+}
+
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  width: auto;
+}
+
+img {
+  height: 200px;
+  width: 200px;
 }
