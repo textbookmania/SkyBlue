@@ -1,37 +1,77 @@
 body {
   color: black;
-  background-color: black;
-  font-family: "Helvetica Neue";
+  background-color: #4A484B;
+  font-family: "Helvetica Neue", 'Helvetica' !important;
 }
 
+/** NAVBAR SETTINGS **/
+
 nav.navbar.navbar-inverse.navbar-fixed-top {
-  height: 70px;
-  border-style: none;
+  background-color: #4A484B;
+  border-bottom: solid 5px #AEAAAA;
+  height: 73px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  line-height: 50px;
+  line-height: 40px;
   color: white;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", 'Helvetica';
 }
 
 .mainheader {
   margin-top: 70px;
   border-radius: 0 !important;
-  background-color: red;
+  background-color: #87CEEB;
   text-align: center;
   padding-top: 15px;
 }
 
-h1 {
+/************************/
+
+h1, h3 {
   margin: 0;
 }
 
+hr {
+  width: 100px;
+  border-color: black;
+}
+
 .headerimg {
-  width: 250px;
+  width: 200px;
+  margin-bottom: 25px;
 }
 
 .smalllogo {
   width: 50px;
   margin-top: -8px;
+}
+
+#featuretitle {
+  padding-top: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.features {
+  background-color: white;
+  text-align: center;
+}
+
+.featureimg {
+  width: 100px;
+  margin: 20px 10px 20px 10px;
+}
+
+.featuredsc {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+
+/** FOOTER SETTINGS **/
+
+.text-muted {
+  color: white;
 }
