@@ -15,7 +15,7 @@ Router.route('/', {
 });
 
 Router.route('/list', {
-  name: 'ListStuff'
+  name: 'ListTextBook'
 });
 
 Router.route('/add', {
