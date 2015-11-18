@@ -1,8 +1,35 @@
-<template name = "BuyOffer">
-  <div class="changebuyoffer">
-    <a href="/add"><img src="/images/add.svg" alt="Logo"></a>
-    <a href="/stuff/:_id"><img src="/images/edit.png" alt="Logo"></a>
-    <a href="/list"><img src="/images/list.png" alt="Logo"></a>
+<template name="BuyOffer">
+
+  <div class="row mainheader">
+    <img class="headerimg" src="/images/tblogo.png">
+    <h1>BUYOFFER</h1>
+    <p>
+      Donec vel ligula quis ex accumsan porta.
+    </p>
+  </div>
+
+  <div class="row features">
+    <div class="col-md-4 feature" id="textbook">
+      <a href="/add"><img class="featureimg" src="/images/add.svg" alt="Logo"></a>
+      <h3>ADD</h3>
+      <p class="featuredsc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis vulputate ligula consectetur lobortis.
+      </p>
+    </div>
+    <div class="col-md-4 feature" id="buybook">
+      <a href="/stuff/:_id"><img class="featureimg" src="/images/edit.png" alt="Logo"></a>
+      <h3>EDIT</h3>
+      <p>
+        Suspendisse potenti. Maecenas sollicitudin consectetur eleifend.
+      </p>
+    </div>
+    <div class="col-md-4 feature" id="sellbook">
+      <a href="/list"><img class="featureimg" src="/images/list.png" alt="Logo"></a>
+      <h3>LIST</h3>
+      <p>
+        Suspendisse dignissim sollicitudin quam quis auctor. Ut malesuada mi nibh, eu placerat leo varius ac.
+      </p>
+    </div>
   </div>
 
 </template>
