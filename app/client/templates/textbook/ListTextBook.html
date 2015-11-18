@@ -1,15 +1,13 @@
 <template name="ListTextBook">
-
-  <div class="row mainheader">
-    <img class="headerimg" src="/images/tblogo.png">
-
-    <h1>TEXTBOOK</h1>
-
-    <p>
-      Donec vel ligula quis ex accumsan porta.
-    </p>
+  <div class="row tbheader" style="margin-bottom: 8px;">
+    <div class="titleborder">
+      <h1 class="titlespace">TEXTBOOKS</h1>
+      <p>
+        Donec vel ligula quis ex accumsan porta.
+      </p>
+    </div>
   </div>
-
+  <!--
   <div class="well">
     <table class="table .table-striped .table-bordered">
       <thead>
@@ -45,6 +43,21 @@
       </tbody>
     </table>
 
-  </div>
+  </div> -->
+    {{#each textbookList}}
+    <div class="row house">
+      <div class="col-md-4 imgdesc">
+        <img src="{{picture}}" alt="Image note available">
+      </div>
+      <div class="col-md-8">
+        <span class="bookdesc">Course:</span> {{course}} <br>
+        <span class="bookdesc">Title:</span> {{title}} <br>
+        <span class="bookdesc">Author:</span> {{author}} <br>
+        <span class="bookdesc">ISBN:</span> {{isbn}} <br> <br>
+        <a class="button2" href="#">EDIT</a>
+        <a class="button2" href="#">DELETE</a>
+      </div>
+    </div>
+    {{/each}}
 
 </template>
