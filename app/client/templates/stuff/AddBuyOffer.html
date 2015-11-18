@@ -1,0 +1,25 @@
+<template name="AddBuyOffer">
+  {{#IfLoggedIn}}
+  <div class="row mainheader">
+    <img class="headerimg" src="/images/tblogo.png">
+
+    <h1>ADD</h1>
+
+    <p>
+      Donec vel ligula quis ex accumsan porta.
+    </p>
+  </div>
+    <div class="well">
+      {{> quickForm
+      collection="BuyOffer"
+      template="bootstrap3-horizontal"
+      label-class="col-sm-2"
+      input-col-class="col-sm-10"
+
+      id="AddBuyOfferForm"
+      type="method"
+      meteormethod="addBuyOffer"
+      resetOnSuccess=true}}
+    </div>
+  {{/IfLoggedIn}}
+</template>
