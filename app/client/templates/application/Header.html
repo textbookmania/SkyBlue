@@ -18,12 +18,16 @@
           {{#if currentUser}}
           <li><a href="{{ pathFor 'ListTextBook' }}">TEXTBOOK</a></li>
           <li><a href="{{ pathFor 'BuyOffer' }}">BUY OFFER</a></li>
+          {{#if isInRole 'admin'}}
+          <li><a href="{{ pathFor 'ListStudent' }}">STUDENTS</a></li>
+          {{/if}}
           <li><a href="#">SELL OFFER</a></li>
           {{/if}}
 
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ pathFor 'AddStudent' }}">PROFILE</a></li>
           {{> CasLogin }}
         </ul>
 

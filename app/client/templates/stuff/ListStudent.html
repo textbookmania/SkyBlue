@@ -1,0 +1,36 @@
+<template name="ListStudent">
+  {{#IfLoggedIn}}
+  <div class="row tbheader" style="margin-bottom: 8px;">
+    <div class="titleborder">
+      <h1 class="titlespace">LIST</h1>
+      <p>
+        Donec vel ligula quis ex accumsan porta.
+      </p>
+    </div>
+  </div>
+
+  <div class="well">
+
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>First</th>
+        <th>Last</th>
+        <th>Email</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      {{#each studentList}}
+      <tr>
+        <td>{{first}}</td>
+        <td>{{last}}</td>
+        <td>{{email}}</td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+  {{/IfLoggedIn}}
+</template>

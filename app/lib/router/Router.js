@@ -10,6 +10,12 @@ Router.configure({
   loadingTemplate: 'Loading'
 });
 
+Router.configure({
+  layoutTemplate: 'Layout',
+  waitOn: function() { return Meteor.subscribe("Student"); },
+  loadingTemplate: 'Loading'
+});
+
 Router.route('/', {
   name: 'Home'
 });
@@ -26,8 +32,16 @@ Router.route('/add', {
   name: 'AddBuyOffer'
 });
 
-Router.route('buyoffer', {
+Router.route('/buyoffer', {
   name: 'BuyOffer'
+});
+
+Router.route('/liststudent', {
+  name: 'ListStudent'
+});
+
+Router.route('/addstudent', {
+  name: 'AddStudent'
 });
 
 Router.route('/stuff/:_id', {
