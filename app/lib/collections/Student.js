@@ -41,6 +41,10 @@ Meteor.methods({
   editStudent: function(doc, docID) {
     check(doc, BuyOffer.simpleSchema());
     Student.update({_id: docID}, doc);
+  },
+
+  deleteStudent: function(docID) {
+    Student.remove({_id: docID});
   }
 });
 
@@ -81,6 +85,16 @@ Student.attachSchema(new SimpleSchema({
     autoform: {
       group: student,
       palceholder: "UHID"
+    }
+  },
+  pic: {
+    label: "Pic URL",
+    type: String,
+    optional: true,
+    max: 120,
+    autoform: {
+      group: student,
+      palceholder: "Pic URL"
     }
   },
   notif: {
