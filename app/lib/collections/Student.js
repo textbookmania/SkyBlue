@@ -24,21 +24,6 @@ Meteor.methods({
    * @param doc The Offer document.
    */
   addStudent: function(doc) {
-    /* if (doc.email.indexOf('@') > -1) {
-      doc.email = doc.email.slice(0, doc.email.indexOf('@'));
-    }
-
-    if (_.findWhere(Student.find().fetch(), {email: doc.email})) {
-      if (Meteor.isClient) {
-        alert("There is already a user with that email.  Please log in or try again.");
-      }
-    }
-
-    if (Meteor.isServer) {
-      if (!_.contains(Meteor.settings.allowed_users, doc.email)) {}
-      Meteor.settings.allowed_users.push(doc.email);
-    } */
-
     check(doc, Student.simpleSchema());
     Student.insert(doc);
   },
