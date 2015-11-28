@@ -19,15 +19,20 @@
           <li><a href="{{ pathFor 'ListTextBook' }}">TEXTBOOK</a></li>
           <li><a href="{{ pathFor 'BuyOffer' }}">BUY OFFER</a></li>
           <li><a href="#">SELL OFFER</a></li>
-          {{#if isInRole 'admin'}}
-          <li><a href="{{ pathFor 'ListStudent' }}">STUDENTS</a></li>
-          {{/if}}
           {{/if}}
 
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{ pathFor 'AddStudent' }}">PROFILE</a></li>
+          {{#if isInRole 'admin'}}
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <span class="glyphicon glyphicon-wrench"></span> </a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ pathFor 'ListStudent' }}">VIEW STUDENTS</a></li>
+            </ul>
+          </li>
+          {{/if}}
           {{> CasLogin }}
         </ul>
 

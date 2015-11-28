@@ -6,7 +6,17 @@ Accounts.onLogin(function () {
   if (Meteor.user().profile.name && _.contains(Meteor.settings.admin_users, Meteor.user().profile.name)) {
     Roles.addUsersToRoles(Meteor.userId(), 'admin');
   }
+
+  if (Meteor.isServer) {
+    if (!_.findWhere(Student.find().fetch(), {email: Meteor.user().profile.name})) {
+      Student.insert({
+        'email': Meteor.user().profile.name
+      });
+    }
+  }
 });
+
+
 
 Meteor.methods({
   /**
@@ -39,7 +49,7 @@ Meteor.methods({
    * @param docID It's ID.
    */
   editStudent: function(doc, docID) {
-    check(doc, BuyOffer.simpleSchema());
+    check(doc, Student.simpleSchema());
     Student.update({_id: docID}, doc);
   },
 

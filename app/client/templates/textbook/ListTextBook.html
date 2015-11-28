@@ -1,13 +1,5 @@
 <template name="ListTextBook">
-  <div class="row tbheader" style="margin-bottom: 8px;">
-    <div class="titleborder">
-      <h1 class="titlespace">TEXTBOOKS</h1>
-      <p>
-        Donec vel ligula quis ex accumsan porta.
-      </p>
-    </div>
-  </div>
-
+  <div class="fill"></div>
     {{#each textbookList}}
     <div class="row house">
       <div class="col-md-4 imgdesc">
@@ -17,7 +9,8 @@
         <span class="bookdesc">Course:</span> {{course}} <br>
         <span class="bookdesc">ISBN:</span> {{isbn}} <br>
         <span class="bookdesc">Title:</span> {{title}} <br>
-        <span class="bookdesc">Author:</span> {{author}} <br> <br>
+        <span class="bookdesc">Author:</span> {{author}} <br>
+        <span class="bookdesc">Condition:</span> {{condition}} <br><br>
 
         {{#if isInRole 'admin'}}
         <a class="button2" href="#">EDIT</a>

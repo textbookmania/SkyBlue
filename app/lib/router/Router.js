@@ -3,6 +3,19 @@
  * See: http://iron-meteor.github.io/iron-router/
  */
 
+/**
+ * This function returns the username of the user
+ * before getting the data of the user's profile.
+ * @returns profile name of user
+ */
+checkUsername = function() {
+  if (Meteor.user()) {
+    if (!Meteor.loggingIn()) {
+      return Meteor.user().profile.name;
+    }
+  }
+}
+
 
 Router.configure({
   layoutTemplate: 'Layout',
@@ -47,4 +60,9 @@ Router.route('/addstudent', {
 Router.route('/stuff/:_id', {
   name: 'EditBuyOffer',
   data: function() { return BuyOffer.findOne(this.params._id); }
+});
+
+Router.route('/student/', {
+  name: 'EditStudent',
+  data: function() { return Student.findOne({email: checkUsername()}) }
 });
