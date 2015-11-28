@@ -1,0 +1,23 @@
+<template name="AddStudent">
+  <div class="row tbheader" style="margin-bottom: 8px;">
+    <div class="titleborder">
+      <h1 class="titlespace">PROFILE</h1>
+      <p>
+        Donec vel ligula quis ex accumsan porta.
+      </p>
+    </div>
+  </div>
+
+  <div class="well">
+    {{> quickForm
+    collection="Student"
+    template="bootstrap3-horizontal"
+    label-class="col-sm-2"
+    input-col-class="col-sm-10"
+
+    id="AddStudentForm"
+    type="method"
+    meteormethod="addStudent"
+    resetOnSuccess=true}}
+  </div>
+</template>

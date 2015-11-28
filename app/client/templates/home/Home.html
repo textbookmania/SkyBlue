@@ -1,7 +1,10 @@
 <template name="Home">
   <div class="row mainheader">
     <img class="headerimg" src="/images/tblogo.png">
-    <h1>WELCOME</h1>
+    <h1>WELCOME{{#if currentUser}}, <span id="name" style="text-transform: uppercase;"></span>
+      <script>document.getElementById("name").innerHTML = Meteor.user().profile.name;</script>
+      {{/if}}
+    </h1>
     <p>
       Donec vel ligula quis ex accumsan porta.
     </p>
