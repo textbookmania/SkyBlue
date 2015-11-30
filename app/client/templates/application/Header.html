@@ -16,9 +16,12 @@
           <li><a href="#">ABOUT US</a></li>
           <li><a href="#">HELP</a></li>
           {{#if currentUser}}
-          <li><a href="{{ pathFor 'ListTextBook' }}">TEXTBOOK</a></li>
-          <li><a href="{{ pathFor 'BuyOffer' }}">BUY OFFER</a></li>
-          <li><a href="{{ pathFor 'SellOffer' }}">SELL OFFER</a></li>
+          <li><a class="{{#if isCurrentPage 'ListTextBook'}}active{{/if}}" href="{{ pathFor 'ListTextBook' }}">TEXTBOOK
+          </a></li>
+          <li><a class="{{#if isCurrentPage 'BuyOffer'}}active{{/if}}" href="{{ pathFor 'BuyOffer' }}">BUY
+            OFFER</a></li>
+          <li><a class="{{#if isCurrentPage 'SellOffer'}}active{{/if}}" href="{{ pathFor 'SellOffer' }}">SELL
+            OFFER</a></li>
           {{/if}}
 
         </ul>

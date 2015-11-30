@@ -28,9 +28,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
   font-family: "Helvetica Neue", 'Helvetica';
 }
 
-.navbar-inverse .navbar-nav > .open > a,
-.navbar-inverse .navbar-nav > .open > a:hover,
-.navbar-inverse .navbar-nav > .open > a:focus {
+.navbar-inverse .navbar-nav > .open > a, {
   background-color: transparent;
 }
 
@@ -50,6 +48,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 
 h1, h3 {
   margin: 0;
+}
+
+.bumper {
+  margin-top: 90px;
 }
 
 .titlespace {
@@ -118,6 +120,11 @@ hr {
   border-radius: 5px;
 }
 
+.well {
+ margin-left: 10px;
+ margin-right: 10px;
+}
+
 
 /****** FEATURES *********/
 
@@ -151,4 +158,8 @@ footer {
 .text-muted {
   color: white;
   margin: 10px;
+}
+
+.active {
+  background-color: #00AFDD;
 }

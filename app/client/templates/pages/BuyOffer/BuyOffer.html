@@ -1,14 +1,6 @@
 <template name="BuyOffer">
-  <div class="row tbheader">
-    <div class="titleborder">
-      <h1 class="titlespace">BUY OFFER</h1>
-      <p>
-        Donec vel ligula quis ex accumsan porta.
-      </p>
-    </div>
-  </div>
 
-  <div class="row features">
+  <div class="row features bumper">
     <div class="col-md-4 feature" id="textbook">
       <a href="{{pathFor 'AddBuyOffer'}}"><img class="featureimg" src="/images/add.svg" alt="Logo"></a>
       <h3>ADD</h3>
@@ -17,7 +9,7 @@
       </p>
     </div>
     <div class="col-md-4 feature" id="buybook">
-      <a href="/B/:_id"><img class="featureimg" src="/images/edit.png" alt="Logo"></a>
+      <a href="/buyoffer-edit/:_id"><img class="featureimg" src="/images/edit.png" alt="Logo"></a>
       <h3>EDIT</h3>
       <p>
         Suspendisse potenti. Maecenas sollicitudin consectetur eleifend.

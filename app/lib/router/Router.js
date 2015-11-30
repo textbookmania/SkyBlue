@@ -14,7 +14,7 @@ checkUsername = function() {
       return Meteor.user().profile.name;
     }
   }
-}
+};
 
 
 
@@ -37,7 +37,6 @@ Router.configure({
   waitOn: function() { return Meteor.subscribe("BuyOffer"); },
   loadingTemplate: 'Loading'
 });
-
 
 
 Router.configure({
@@ -99,7 +98,7 @@ Router.route('/selloffer', {
 
 Router.route('/selloffer-edit/:_id', {
   name: 'EditSellOffer',
-  data: function() { return BuyOffer.findOne(this.params._id); }
+  data: function() { return SellOffer.findOne(this.params._id); }
 });
 
 
