@@ -2,6 +2,9 @@
  * After successful addition of a new BuyOffer document, go to List page.
  * See: https://github.com/aldeed/meteor-autoform#callbackshooks
  */
+
+allowedBooks = _.pluck(Textbook.find({},{fields:{'title':1}}).fetch(), 'title');
+
 AutoForm.hooks({
   AddBuyOfferForm: {
     /**

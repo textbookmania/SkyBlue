@@ -17,11 +17,20 @@ checkUsername = function() {
 }
 
 
+
+Router.configure({
+  layoutTemplate: 'Layout',
+  waitOn: function() { return Meteor.subscribe("Textbook"); },
+  loadingTemplate: 'Loading'
+});
+
 Router.configure({
   layoutTemplate: 'Layout',
   waitOn: function() { return Meteor.subscribe("BuyOffer"); },
   loadingTemplate: 'Loading'
 });
+
+
 
 Router.configure({
   layoutTemplate: 'Layout',
