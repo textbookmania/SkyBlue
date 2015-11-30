@@ -44,6 +44,7 @@ if (Meteor.isServer) {
  * See: https://github.com/aldeed/meteor-autoform#common-questions
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
+
 // TODO: Auto generate picture from ISBN.
 Textbook.attachSchema(new SimpleSchema({
     title: {

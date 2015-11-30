@@ -2,52 +2,52 @@
 //TODO: Put this into a collection and allow admins to modify this value.
 //TODO: Clean out comments within the code.
 
-var expirationIN = 1; //Expired in 1 day from the day that a document was created.
+var expirationINS = 1; //Expired in 1 day from the day that a document was created.
 
 
-buyoffer = "BuyOffer";  // avoid typos, this string occurs many times.
+selloffer = "SellOffer";  // avoid typos, this string occurs many times.
 
-BuyOffer = new Mongo.Collection(buyoffer);
+SellOffer = new Mongo.Collection(selloffer);
 
 Meteor.methods({
   /**
-   * Invoked by AutoForm to add a new BuyOffer record.
+   * Invoked by AutoForm to add a new SellOffer record.
    * @param doc The Offer document.
    */
-  addBuyOffer: function(doc) {
-    check(doc, BuyOffer.simpleSchema());
-    BuyOffer.insert(doc);
+  addSellOffer: function(doc) {
+    check(doc, SellOffer.simpleSchema());
+    SellOffer.insert(doc);
   },
   /**
    *
-   * Invoked by AutoForm to update a BuyOffer record.
-   * @param doc The BuyOffer document.
+   * Invoked by AutoForm to update a sellOffer record.
+   * @param doc The SellOffer document.
    * @param docID It's ID.
    */
-  editBuyOffer: function(doc, docID) {
-    check(doc, BuyOffer.simpleSchema());
-    BuyOffer.update({_id: docID}, doc);
+  editSellOffer: function(doc, docID) {
+    check(doc, SellOffer.simpleSchema());
+    SellOffer.update({_id: docID}, doc);
   }
 });
 
 // Publish the entire Collection.  Subscription performed in the router.
 if (Meteor.isServer) {
-  Meteor.publish(buyoffer, function () {
-    return BuyOffer.find();
+  Meteor.publish(selloffer, function () {
+    return SellOffer.find();
   });
 }
 
 //allowedBooks = [];
 
 /**
- * Create the schema for BuyOffer
+ * Create the schema for SellOffer
  * See: https://github.com/aldeed/meteor-autoform#common-questions
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
 
 
 
-BuyOffer.attachSchema(new SimpleSchema({
+SellOffer.attachSchema(new SimpleSchema({
   /*
   title: {
     label: "Title",
@@ -55,7 +55,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     optional: false,
     max: 20,
     autoform: {
-      group: buyoffer,
+      group: selloffer,
       placeholder: "Title"
     }
   },
@@ -63,7 +63,7 @@ BuyOffer.attachSchema(new SimpleSchema({
   book:{
     type: String,
     autoform:{
-      group: buyoffer,
+      group: selloffer,
       afFieldInput:{
         firstOption:"(Select Textbook)"
       },
@@ -86,7 +86,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     optional: false,
     autoform: {
       type: "hidden",
-      group: buyoffer,
+      group: selloffer,
       placeholder: "Author"
     }
   },
@@ -96,7 +96,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     optional: false,
     autoform: {
       type: "hidden",
-      group: buyoffer,
+      group: selloffer,
       placeholder: "ISBN"
     }
   },
@@ -106,7 +106,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     type: Number,
     optional: false,
     autoform: {
-      group: buyoffer,
+      group: selloffer,
       placeholder: "Offer"
     }
   },
@@ -115,7 +115,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     type: String,
     optional: false,
     autoform: {
-      group: buyoffer,
+      group: selloffer,
       placeholder: "Condition"
     }
   },
@@ -125,12 +125,12 @@ BuyOffer.attachSchema(new SimpleSchema({
     optional: true,
     autoValue: function(){
       d = new Date()
-      d.setDate(d.getDate() + expirationIN);
+      d.setDate(d.getDate() + expirationINS);
       return d;
     },
     autoform: {
       type: "hidden",
-      group: buyoffer,
+      group: selloffer,
       placeholder: "Expiration Date"
     }
   }
