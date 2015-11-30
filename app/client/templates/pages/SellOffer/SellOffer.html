@@ -1,0 +1,34 @@
+<template name = "SellOffer">
+    <div class="row tbheader">
+        <div class="titleborder">
+            <h1 class="titlespace">SELL OFFER</h1>
+            <p>
+                Donec vel ligula quis ex accumsan porta.
+            </p>
+        </div>
+    </div>
+
+    <div class="row features">
+        <div class="col-md-4 feature" id="textbook">
+            <a href="{{pathFor 'AddSellOffer'}}"><img class="featureimg" src="/images/add.svg" alt="Logo"></a>
+            <h3>ADD</h3>
+            <p class="featuredsc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis vulputate ligula consectetur lobortis.
+            </p>
+        </div>
+        <div class="col-md-4 feature" id="buybook">
+            <a href="/selloffer-edit/:_id"><img class="featureimg" src="/images/edit.png" alt="Logo"></a>
+            <h3>EDIT</h3>
+            <p>
+                Suspendisse potenti. Maecenas sollicitudin consectetur eleifend.
+            </p>
+        </div>
+        <div class="col-md-4 feature" id="sellbook">
+            <a href="{{pathFor 'ListSellOffer'}}"><img class="featureimg" src="/images/list.png" alt="Logo"></a>
+            <h3>LIST</h3>
+            <p>
+                Suspendisse dignissim sollicitudin quam quis auctor. Ut malesuada mi nibh, eu placerat leo varius ac.
+            </p>
+        </div>
+    </div>
+</template>

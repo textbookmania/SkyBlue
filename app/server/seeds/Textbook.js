@@ -1,6 +1,7 @@
+/**
+ * Created by sora on 11/29/15.
+ */
 
-
-/*TODO: move this code to server directory*/
 // Variables for retrieving amazon book image.
 var amazonImg = "http://images.amazon.com/images/P/";
 var imgConfig = ".01._SCMZZZZZZZ_.jpg"
@@ -14,10 +15,10 @@ var imgConfig = ".01._SCMZZZZZZZ_.jpg"
 function getImg(ISBN){
     return amazonImg + ISBN + imgConfig;
 }
-/* TODO: move this code to server directory */
+
 var textbookSeeds = [
 
-    {course: "ICS111",picture: getImg("0470509473"), title: "Java Concepts: Compatible with Java 5, 6 and 7 6th Edition", author:" Cay S. Horstmann",isbn:"0470509473",condition:"Excellent"},
+    {course: "ICS112",picture: getImg("0470509473"), title: "Java Concepts: Compatible with Java 5, 6 and 7 6th Edition", author:" Cay S. Horstmann",isbn:"0470509473",condition:"Excellent"},
     {course: "ICS141",picture: getImg("0073383090"), title: "Discrete Mathematics and Its Applications Seventh Edition 7th Edition", author:"Kenneth Rosen",isbn:"0073383090",condition:"Excellent"},
     {course: "ICS211",picture: getImg("0470128704"), title: "Data Structures: Abstraction and Design Using Java 2nd Edition", author:"Elliot B. Koffman",isbn:"0470128704",condition:"Excellent"},
     {course: "ICS212",picture: getImg("0131103628"), title: "The C Programming Language 2nd Edition", author:"Brian W. Kernighan",isbn:"0131103628",condition:"Excellent"},
@@ -40,16 +41,8 @@ var textbookSeeds = [
     {course: "ICS390",picture: getImg("0123747317"), title: "Artificial Intelligence for Games 2nd Edition", author:"Ian Millington",isbn:"0123747317",condition:"Excellent"}
 ];
 
-
-Template.ListTextBook.helpers({
-
-    /**
-     * @returns {*} All of the Contact documents.
-     */
-
-
-textbookList: function () {
-        return textbookSeeds;
-    }
-
-});
+if(Textbook.find().count() == 0){
+    _.each(textbookSeeds, function(book){
+        Textbook.insert(book);
+    });
+}
