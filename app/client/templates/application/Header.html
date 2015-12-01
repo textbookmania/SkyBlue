@@ -14,7 +14,7 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">HELP</a></li>
+          <li><a class="{{#if isCurrentPage 'Help'}}active{{/if}}" href="{{ pathFor 'Help' }}">HELP</a></li>
           {{#if currentUser}}
           <li><a class="{{#if isCurrentPage 'ListTextBook'}}active{{/if}}" href="{{ pathFor 'ListTextBook' }}">TEXTBOOK
           </a></li>
