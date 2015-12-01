@@ -12,3 +12,8 @@ meteor --settings ../config/settings.development.json
 
 The home page for the application looks like this:
 
+![](https://raw.githubusercontent.com/textbookmania/SkyBlue/master/doc/homepage.png)
+
+# Credits
+
+Based upon the [meteor-application-template](http://ics-software-engineering.github.io/meteor-application-template/).
