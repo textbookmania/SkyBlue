@@ -5,8 +5,13 @@
     {{#if canShow}}
       {{> UI.contentBlock }}
     {{else}}
-      <p>You are not authorized to view this page.</p>
-      <p>Please login.</p>
+  <div class="row mainheader">
+    <img class="headerimg" src="/images/tblogo.png">
+    <h1>You are not authorized to view this page.</h1>
+    <hr>
+    <h4>PLEASE LOG IN</h4>
+  </div>
+
     {{/if}}
   {{/if}}
 </template>
