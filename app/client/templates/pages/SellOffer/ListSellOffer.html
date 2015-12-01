@@ -1,0 +1,34 @@
+<template name="ListSellOffer">
+  {{#IfLoggedIn}}
+
+  <div class="well bumper">
+
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+       <!-- <th>Title</th> -->
+        <th>Book</th>
+        <th>Condition</th>
+        <th>Offer</th>
+        <th>Expiration</th>
+        <th>Edit</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      {{#each sellOfferList}}
+      <tr>
+       <!--  <td>{{title}}</td> -->
+        <td>{{book}}</td>
+        <td>{{condition}}</td>
+        <td>{{offer}}</td>
+        <td>{{expirationDate}}</td>
+        <td><a href="{{pathFor 'EditSellOffer'}}">Edit</a></td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+  {{/IfLoggedIn}}
+</template>

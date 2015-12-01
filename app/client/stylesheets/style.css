@@ -28,9 +28,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
   font-family: "Helvetica Neue", 'Helvetica';
 }
 
-.navbar-inverse .navbar-nav > .open > a,
-.navbar-inverse .navbar-nav > .open > a:hover,
-.navbar-inverse .navbar-nav > .open > a:focus {
+.navbar-inverse .navbar-nav > .open > a, {
   background-color: transparent;
 }
 
@@ -50,6 +48,39 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 
 h1, h3 {
   margin: 0;
+}
+
+h4 {
+  text-align: left;
+  font-size: 25px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.list {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: "Helvetica Neue", 'Helvetica';
+  font-size: 18px;
+}
+
+para {
+  text-align: left;
+  font-size: 18px;
+  margin-left: 25px;
+}
+
+.box {
+  margin-left: 25px;
+  margin-bottom: 8px;
+}
+
+.titlespace {
+  letter-spacing: 8px;
+}
+
+.bumper {
+  margin-top: 90px;
 }
 
 .titlespace {
@@ -118,6 +149,11 @@ hr {
   border-radius: 5px;
 }
 
+.well {
+ margin-left: 10px;
+ margin-right: 10px;
+}
+
 
 /****** FEATURES *********/
 
@@ -151,4 +187,8 @@ footer {
 .text-muted {
   color: white;
   margin: 10px;
+}
+
+.active {
+  background-color: #00AFDD;
 }
