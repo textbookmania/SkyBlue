@@ -49,6 +49,10 @@ Router.route('/', {
   name: 'Home'
 });
 
+Router.route('/about', {
+  name: 'About'
+});
+
 Router.route('/help', {
   name: 'Help'
 });
