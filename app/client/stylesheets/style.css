@@ -2,6 +2,7 @@ body {
   color: black;
   background-color: white;
   font-family: "Helvetica Neue", 'Helvetica' !important;
+  font-size: 16px;
 }
 
 .container-fluid {
@@ -51,9 +52,9 @@ h1, h3 {
 }
 
 h4 {
+  color: #00AFDD;
   text-align: left;
   font-size: 25px;
-  margin-left: 10px;
   font-weight: bold;
 }
 
@@ -62,12 +63,6 @@ h4 {
   margin-top: 10px;
   font-family: "Helvetica Neue", 'Helvetica';
   font-size: 18px;
-}
-
-para {
-  text-align: left;
-  font-size: 18px;
-  margin-left: 25px;
 }
 
 .box {
@@ -189,6 +184,44 @@ footer {
   margin: 10px;
 }
 
-.active {
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   background-color: #00AFDD;
+}
+
+.emgit {
+  text-align: left;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.devlink {
+  text-decoration: none;
+  color: black;
+}
+
+.devlink:hover  {
+  color: black;
+}
+
+.aboutdsc {
+  padding: 5px 40px 10px 40px;
+}
+
+.babybox {
+  background-color: white;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+div#header1 {
+  text-align: center;
+}
+
+ul > li {
+  color: #00AFDD;
+  padding: 0;
+  margin: 0;
 }
