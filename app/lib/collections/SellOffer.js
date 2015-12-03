@@ -139,6 +139,18 @@ SellOffer.attachSchema(new SimpleSchema({
       group: selloffer,
       placeholder: "Expiration Date"
     }
+  },
+  studentID: {
+    type: String,
+    label: "Student",
+    optional: false,
+    autoValue: function() {
+      return Meteor.user().profile.name;
+    },
+    autoform: {
+      type: "hidden",
+      group: selloffer,
+      placeholder: "Student"
+    }
   }
-
 }));
