@@ -65,6 +65,7 @@ Textbook.attachSchema(new SimpleSchema({
             placeholder: "Course"
         }
     },
+    /*
     picture: {
         label: "URL",
         type: String,
@@ -74,6 +75,7 @@ Textbook.attachSchema(new SimpleSchema({
             placeholder: "URL"
         }
     },
+    */
     author: {
         label: "Author",
         type: String,
