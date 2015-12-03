@@ -115,7 +115,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     type: String,
     optional: false,
     allowedValues: [
-      "Excellent", "Good", "Fair", "Poor"
+      "Excellent", "Good", "Fair", "Poor", "Don't Care"
     ],
     autoform: {
       group: buyoffer,
