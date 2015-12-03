@@ -92,23 +92,6 @@ Textbook.attachSchema(new SimpleSchema({
             group: textbook,
             placeholder: "ISBN-10"
         }
-    },
-    condition: {
-        label: "Condition",
-        type: String,
-        optional: false,
-        max: 20,
-        allowedValues: [
-          "Excellent", "Good", "Fair", "Poor"
-        ],
-        autoform: {
-            group: textbook,
-            afFieldInput: {
-                firstOption: "-- Select Condition --"
-            },
-            placeholder: "Condition"
-        }
     }
-
 }));
 
