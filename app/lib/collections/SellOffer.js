@@ -65,7 +65,7 @@ SellOffer.attachSchema(new SimpleSchema({
     autoform:{
       group: selloffer,
       afFieldInput:{
-        firstOption:"(Select Textbook)"
+        firstOption: "-- Select Textbook --"
       },
       options:function(){
         var books = _.pluck(Textbook.find({},{fields:{'title':1}}).fetch(), 'title');
@@ -114,8 +114,14 @@ SellOffer.attachSchema(new SimpleSchema({
     label: "Condition",
     type: String,
     optional: false,
+    allowedValues: [
+      "Excellent", "Good", "Fair", "Poor"
+    ],
     autoform: {
       group: selloffer,
+      afFieldInput: {
+        firstOption: "-- Select Condition --"
+      },
       placeholder: "Condition"
     }
   },
