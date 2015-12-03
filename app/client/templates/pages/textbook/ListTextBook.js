@@ -25,3 +25,16 @@ textbookList: function () {
     }
 
 });
+
+Template.ListTextBook.events ({
+
+  'click .deleteTextbook': function(e) {
+    e.preventDefault();
+
+    if (confirm("Delete this post?")) {
+      var currentContactId = this._id;
+      Meteor.call('deleteTextbook', currentContactId);
+      Router.go('listtextbook');
+    }
+  }
+})
