@@ -143,7 +143,7 @@ BuyOffer.attachSchema(new SimpleSchema({
   studentID: {
     type: String,
     label: "Student",
-    optional: false,
+    optional: true,
     autoValue: function() {
       return Meteor.user().profile.name;
     },

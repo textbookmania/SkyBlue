@@ -4,7 +4,7 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ currentUser.profile.name }}<b class="caret"></b></a>
     <ul class="dropdown-menu" role="menu">
       <li><a href="{{ pathFor 'EditStudent' }}" class="btn">Edit Profile</a></li>
-      <li><a href="#" class="btn">View Your Offers</a></li>
+      <li><a href="{{ pathFor 'ViewYourOffers' }}" class="btn">View Your Offers</a></li>
       <li><a href="#" class="btn cas-logout">LOGOUT</a></li>
     </ul>
   </li>

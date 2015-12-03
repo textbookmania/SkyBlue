@@ -99,6 +99,10 @@ Router.route('/student/', {
   data: function() { return Student.findOne({email: checkUsername()}) }
 });
 
+Router.route('/viewyouroffers', {
+  name: 'ViewYourOffers'
+});
+
 
 Router.route('/selloffer-list', {
   name: 'ListSellOffer'
