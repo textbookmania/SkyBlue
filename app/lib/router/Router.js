@@ -81,6 +81,10 @@ Router.route('/addtextbook', {
   name: 'AddTextBook'
 });
 
+Router.route('/edittextbook', {
+  name: 'EditTextBook'
+});
+
 Router.route('/addstudent', {
   name: 'AddStudent'
 });
