@@ -81,8 +81,9 @@ Router.route('/addtextbook', {
   name: 'AddTextBook'
 });
 
-Router.route('/edittextbook', {
-  name: 'EditTextBook'
+Router.route('/edittextbook/:_id', {
+  name: 'EditTextBook',
+  data: function() { return Textbook.findOne(this.params._id); }
 });
 
 Router.route('/addstudent', {

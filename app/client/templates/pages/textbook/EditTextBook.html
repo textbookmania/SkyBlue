@@ -1,4 +1,5 @@
 <template name="EditTextBook">
+  {{#IfLoggedIn}}
   <div class="well bumper">
     {{> quickForm
     collection="Textbook"
@@ -12,4 +13,5 @@
     doc=this
     buttonContent="Update"}}
   </div>
+  {{/IfLoggedIn}}
 </template>
