@@ -3,6 +3,7 @@ body {
   background-color: white;
   font-family: "Helvetica Neue", 'Helvetica' !important;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 .container-fluid {
@@ -72,7 +73,7 @@ h4 {
 }
 
 .bumper {
-  margin-top: 90px;
+  margin-top: 90px !important;
 }
 
 .titlespace {
@@ -111,12 +112,12 @@ hr {
 
 .house {
   width: 60%;
-  margin: auto;
-  margin-bottom: 10px;
   background-color: white;
   padding: 8px;
   border: 1px solid black;
   border-radius: 10px;
+  margin: auto !important;
+  margin-bottom: 15px !important;
 }
 
 .bookdesc {
@@ -185,8 +186,13 @@ footer {
   background-color: #00AFDD;
 }
 
+.navbar-inverse .navbar-nav > li > a:hover {
+  background-color: #00AFDD !important;
+}
+
 .emgit {
   text-align: left;
+  background-color: white;
   border: solid 1px black;
   border-radius: 5px;
   padding: 10px;
@@ -221,4 +227,74 @@ ul > li {
   color: #00AFDD;
   padding: 0;
   margin: 0;
+}
+
+div.img-div {
+  /* make it responsive */
+  max-width: 100%;
+  width: 30%;
+  height: 100%;
+  display:block;
+  /* div height to be the same as width*/
+  padding-top: 30%;
+
+  /* make it a cirkle */
+  border-radius: 50%;
+
+  /* Centering on image`s center*/
+  background-position-y: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
+
+  /* it makes the clue thing, takes smaller dimention to fill div */
+  background-size: cover;
+
+  /* it is optional, for making this div centered in parent*/
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.studentleft {
+  text-align: center;
+  padding-top: 200px;
+}
+
+.studentright {
+  border-top: solid 8px #00AFDD;
+  margin: 140px 0 0 0;
+}
+
+.fix {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.row {
+  margin: 0;
+}
+
+.studentc {
+  background-color: white;
+  border: none;
+  box-shadow: none;
+}
+
+.box1 {
+  margin-top: 73px;
+  padding-bottom: 150px;
+}
+
+button.btn.btn-primary {
+  background-color: #00AFDD;
+  border: none;
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: transparent;
 }
