@@ -12,7 +12,7 @@
         <span class="bookdesc">Author:</span> {{author}} <br><br>
 
         {{#if isInRole 'admin'}}
-        <a class="button2" href="#">EDIT</a>
+        <a class="button2" href="{{ pathFor 'EditTextBook' }}">EDIT</a>
         <a class="button2" href="#">DELETE</a>
         {{/if}}
       </div>
