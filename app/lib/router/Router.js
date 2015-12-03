@@ -77,6 +77,10 @@ Router.route('/liststudent', {
   name: 'ListStudent'
 });
 
+Router.route('/addtextbook', {
+  name: 'AddTextBook'
+});
+
 Router.route('/addstudent', {
   name: 'AddStudent'
 });
