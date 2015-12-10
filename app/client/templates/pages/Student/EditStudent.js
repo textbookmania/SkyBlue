@@ -1,17 +1,16 @@
 /**
- * After successful addition of a new BuyOffer document, go to List page.
+ * After successful edit, go to List page.
  * See: https://github.com/aldeed/meteor-autoform#callbackshooks
  */
-
 AutoForm.hooks({
-  AddSellOfferForm: {
+  EditStudentForm: {
     /**
-     * After successful form submission, go to the ListBuyOffer page.
+     * After successful form submission, go to the ListFlight page.
      * @param formType The form.
      * @param result The result of form submission.
      */
     onSuccess: function(formType, result) {
-      Router.go('SellOffer');
-      }
+      Router.go('Home');
+    }
   }
 });

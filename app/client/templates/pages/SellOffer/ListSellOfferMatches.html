@@ -1,0 +1,42 @@
+<template name="ListSellOfferMatches">
+  {{#IfLoggedIn}}
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="bumper">
+        <div class="matchbox">
+          <h1 style="text-align: center; padding-bottom: 20px; color: #00AFDD">List of Buy Matches</h1>
+          <a style="margin-bottom: 10px; font-size: 12px;" class="button1" href="{{ pathFor 'AddSellOffer' }}">BACK</a>
+        </div>
+        <table class="table table-bordered" style="background-color: white; border-top: 5px solid #00AFDD;">
+          <thead>
+          <tr>
+            <th>Book</th>
+            <th>Condition</th>
+            <th>Offer</th>
+            <th>Expiration</th>
+            <th>User</th>
+            <th></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each sellOfferMatchList}}
+          <tr>
+            <td>{{book}}</td>
+            <td>{{condition}}</td>
+            <td>${{offer}}</td>
+            <td>{{ formatDate expirationDate }}<br>{{ formatTime expirationDate}}</td>
+            <td>{{studentID}}</td>
+            <td><a href="#" class="button1" style="font-size: 10px;">ACCEPT</a></td>
+          </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  {{/IfLoggedIn}}
+</template>

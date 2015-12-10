@@ -1,28 +1,13 @@
 <template name="BuyOffer">
+  <div class="row" style="background-image: url('/images/library1.png'); padding-top: 100px; background-size: cover;">
+    <div class="col-md-2">
 
-  <div class="row features bumper">
-    <div class="col-md-4 feature" id="textbook">
-      <a href="{{pathFor 'AddBuyOffer'}}"><img class="featureimg" src="/images/add.svg" alt="Logo"></a>
-      <h3>ADD</h3>
-      <p class="featuredsc">
-        Make your offer to buy a textbook here.
-      </p>
     </div>
-    <div class="col-md-4 feature" id="buybook">
-      <a href="/buyoffer-edit/:_id"><img class="featureimg" src="/images/edit.png" alt="Logo"></a>
-      <h3>EDIT</h3>
-      <p>
-        Change your buy offers here.
-      </p>
+    <div class="col-md-8">
+      {{> ListBuyOffer}}
     </div>
-    <div class="col-md-4 feature" id="sellbook">
-      <a href="{{pathFor 'ListBuyOffer'}}"><img class="featureimg" src="/images/list.png" alt="Logo"></a>
-      <h3>LIST</h3>
-      <p>
-        View all buy offers made here.
-      </p>
+    <div class="col-md-2">
+
     </div>
   </div>
-
-  {{> ListBuyOffer}}
 </template>

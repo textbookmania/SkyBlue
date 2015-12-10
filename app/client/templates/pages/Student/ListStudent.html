@@ -1,0 +1,36 @@
+<template name="ListStudent">
+  {{#IfLoggedIn}}
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="bumper">
+        <div class="matchbox">
+          <h1 style="text-align: center; padding-bottom: 20px; color: #00AFDD">List of Students</h1>
+        </div>
+        <table class="table table-bordered" style="background-color: white; border-top: 5px solid #00AFDD;">
+          <thead>
+          <tr>
+            <th>First</th>
+            <th>Last</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each studentList}}
+          <tr>
+            <td>{{first}}</td>
+            <td>{{last}}</td>
+            <td>{{email}}</td>
+            <td><a class="deletestudent button1" style="font-size: 10px" href="#">Delete</a></td>
+          </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  {{/IfLoggedIn}}
+</template>

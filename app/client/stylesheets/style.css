@@ -305,3 +305,12 @@ button.btn.btn-primary {
   margin-top: -60px; /*same height as header*/
   visibility: hidden;
 }
+
+.matchbox {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+legend.af-fieldGroup-heading {
+  visibility: hidden;
+}

@@ -3,7 +3,6 @@
  * See: https://github.com/aldeed/meteor-autoform#callbackshooks
 */
 
-
 AutoForm.hooks({
   AddBuyOfferForm: {
     /**
@@ -12,7 +11,8 @@ AutoForm.hooks({
      * @param result The result of form submission.
      */
     onSuccess: function(formType, result) {
-      Router.go('ListBuyOffer');
+      Router.go('BuyOffer');
     }
   }
 });
+

@@ -27,6 +27,10 @@ Meteor.methods({
   editSellOffer: function(doc, docID) {
     check(doc, SellOffer.simpleSchema());
     SellOffer.update({_id: docID}, doc);
+  },
+
+  deleteSellOffer: function(docID) {
+    SellOffer.remove({_id: docID});
   }
 });
 
@@ -45,7 +49,9 @@ if (Meteor.isServer) {
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
 
-
+SimpleSchema.messages({
+  "duplicateSell": "You already have the same offer in Buy Offer"
+});
 
 SellOffer.attachSchema(new SimpleSchema({
   /*
@@ -77,6 +83,16 @@ SellOffer.attachSchema(new SimpleSchema({
           }
         })
       }
+    },
+    custom: function(){
+      var bkk = this.valueOf('book').value;
+
+
+      var offer = BuyOffer.find({studentID: Meteor.user().profile.name,book :bkk}).fetch();
+      if(offer === undefined || offer.length == 0);
+      else
+        return "duplicateSell";
+
     }
   },
   /*

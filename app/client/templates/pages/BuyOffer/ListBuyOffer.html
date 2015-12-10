@@ -1,31 +1,35 @@
 <template name="ListBuyOffer">
   {{#IfLoggedIn}}
-
-  <div class="well bumper">
-    <table class="table table-striped table-bordered">
+    <table class="table" style="background-color: white; border-top: 5px solid #00AFDD;">
+      <caption style="color: black; text-align: center; margin-bottom: 10px;">
+        <h1 style="text-align: center; margin-bottom: 10px;">BUY OFFER</h1>
+        <p>Create an offer to buy an ICS textbook at a given price or make an offer to sell a textbook to a student who is offering to buy it.</p>
+        <hr style="padding: 0; margin-top: 0; margin-bottom: 20px;">
+        <a href="{{pathFor 'AddBuyOffer'}}" class="button1">ADD</a>
+      </caption>
       <thead>
       <tr>
-       <!-- <th>Title</th> -->
         <th>Book</th>
         <th>Condition</th>
         <th>Offer</th>
         <th>Expiration</th>
+        <th>User</th>
+        <th></th>
       </tr>
       </thead>
 
       <tbody>
       {{#each buyOfferList}}
       <tr>
-       <!--  <td>{{title}}</td> -->
         <td>{{book}}</td>
         <td>{{condition}}</td>
-        <td>{{offer}}</td>
-        <td>{{expirationDate}}</td>
+        <td>${{offer}}</td>
+        <td>{{ formatDate expirationDate }}<br>{{ formatTime expirationDate}}</td>
+        <td>{{studentID}}</td>
+        <td><a href="#" class="button1" style="font-size: 10px;">SELL</a></td>
       </tr>
       {{/each}}
       </tbody>
     </table>
-
-  </div>
   {{/IfLoggedIn}}
 </template>

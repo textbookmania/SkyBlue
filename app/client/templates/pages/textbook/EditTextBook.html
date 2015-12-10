@@ -1,7 +1,14 @@
 <template name="EditTextBook">
   {{#IfLoggedIn}}
-  <div class="well bumper">
-    {{> quickForm
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="well bumper" style="margin-bottom: 267px; background-color: white; border: 1px solid black;">
+        <h1 style="text-align: center; color: #00AFDD;">Edit Textbook</h1>
+        <p style="text-align: center; margin-left: 10%; margin-right: 10%;">
+          Make the following changes to the textbook.
+        </p>
+      {{> quickForm
     collection="Textbook"
     template="bootstrap3-horizontal"
     label-class="col-sm-2"
@@ -12,6 +19,9 @@
     meteormethod="editTextbook"
     doc=this
     buttonContent="Update"}}
+      </div>
+    </div>
+    <div class="col-md-2"></div>
   </div>
   {{/IfLoggedIn}}
 </template>

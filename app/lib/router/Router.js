@@ -65,6 +65,14 @@ Router.route('/buyoffer-list', {
   name: 'ListBuyOffer'
 });
 
+Router.route('/listbuyoffermatches', {
+  name: 'ListBuyOfferMatches'
+});
+
+Router.route('/listselloffermatches', {
+  name: 'ListSellOfferMatches'
+});
+
 Router.route('/buyoffer-add', {
   name: 'AddBuyOffer'
 });
