@@ -290,9 +290,10 @@ div.img-div {
 }
 
 button.btn.btn-primary {
-  background-color: #00AFDD;
-  border: none;
-  color: white;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  padding: 3px;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus {

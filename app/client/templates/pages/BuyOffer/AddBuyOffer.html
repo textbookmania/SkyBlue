@@ -1,23 +1,15 @@
 <template name="AddBuyOffer">
   {{#IfLoggedIn}}
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <div class="well bumper" style="margin-bottom: 267px; background-color: white; border: 1px solid black;">
-        <h1 style="text-align: center; color: #00AFDD;">Add Buy Offer</h1>
-        <p style="text-align: center; margin-left: 10%; margin-right: 10%;">
-          Add a new offer to the buy offer list or look at sell offers that match your query.
-        </p>
+  <div style="text-align: center;">
+      <div class="well" style="background-color: rgba(250, 250, 250, 0.8); border: none; border-radius: 0;">
         {{#autoForm collection="BuyOffer" id="AddBuyOfferForm" type="method" meteormethod="addBuyOffer"}}
         {{> afQuickFields book="book" offer="offer" condition="condition" }}
         <div>
           <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-primary matches">Matches</button>
+          <button type="button" class="btn btn-primary matches">Match</button>
         </div>
         {{/autoForm}}
       </div>
-    </div>
-    <div class="col-md-2"></div>
   </div>
   {{/IfLoggedIn}}
 </template>
