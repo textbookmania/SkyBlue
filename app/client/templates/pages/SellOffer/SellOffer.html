@@ -1,13 +1,18 @@
 <template name="SellOffer">
     <div class="row" style="background-image: url('/images/library1.png'); padding-top: 100px; background-size: cover;">
-        <div class="col-md-2">
+        <div class="offerheading" style="color: black; text-align: center; margin-bottom: 10px;">
+            <h1 style="text-align: center; margin-bottom: 10px;">SELL OFFER</h1>
+            <p>Create an offer to sell an ICS textbook at a given price or make an offer to buy a textbook to a student who is offering to sell it.</p>
+            <hr style="padding: 0; margin-top: 0; margin-bottom: 20px;">
+        </div>
 
+        <div class="col-md-3">
+            {{> AddSellOffer }}
         </div>
-        <div class="col-md-8">
-            {{> ListSellOffer}}
-        </div>
-        <div class="col-md-2">
 
+        <div class="col-md-9">
+            {{> ListSellOffer }}
         </div>
+
     </div>
 </template>
