@@ -1,5 +1,5 @@
 #[SkyBlue Textbook Exchange](http://textbookmania.github.io/SkyBlue/)
-![cover image](https://raw.githubusercontent.com/textbookmania/SkyBlue/master/doc/homepage.png)
+![cover image](https://raw.githubusercontent.com/textbookmania/SkyBlue/master/doc/NotLoggedInHomepage.png)
 SkyBlue Textbook Exchange is a student made website that allows the University of Hawaii at Manoa's Information and Computer Sciences (ICS) students to find, buy, and sell textbooks from various ICS classes.
 
 # Installation
