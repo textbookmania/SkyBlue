@@ -12,5 +12,8 @@ Template.ListSellOffer.helpers({
   },
   formatTime: function (date) {
     return moment(date).format('h:mm a');
+  },
+  isNotUser: function (studentname) {
+    return studentname !== Meteor.user().profile.name;
   }
 });

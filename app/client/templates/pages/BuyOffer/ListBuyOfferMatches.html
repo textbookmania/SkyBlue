@@ -1,40 +1,44 @@
 <template name="ListBuyOfferMatches">
   {{#IfLoggedIn}}
+  <div class="row" style="background-image: url('/images/library1.png'); padding-top: 100px; background-size: cover;">
+    <div class="offerheading" style="color: black; text-align: center; margin-bottom: 10px;">
+      <h1 style="text-align: center; margin-bottom: 10px;">BUY OFFER MATCHES</h1>
+      <p>Listed are the current Sell Offer matches for your offer.</p>
+      <hr style="padding: 0; margin-top: 0; margin-bottom: 20px;">
+      <a style="margin-bottom: 10px; font-size: 12px;" class="button1" href="{{ pathFor 'BuyOffer' }}">BACK</a>
+    </div>
 
-  <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-      <div class="bumper">
-        <div class="matchbox">
-          <h1 style="text-align: center; padding-bottom: 20px; color: #00AFDD">List of Sell Matches</h1>
-          <a style="margin-bottom: 10px; font-size: 12px;" class="button1" href="{{ pathFor 'BuyOffer' }}">BACK</a>
-        </div>
-        <table class="table table-bordered" style="background-color: white; border-top: 5px solid #00AFDD;">
-          <thead>
-          <tr>
-            <th>Book</th>
-            <th>Condition</th>
-            <th>Offer</th>
-            <th>Expiration</th>
-            <th>User</th>
-            <th></th>
-          </tr>
-          </thead>
+      <table class="table table-bordered" style="background-color: white; border-top: 5px solid #00AFDD;">
+        <thead>
+        <tr>
+          <th>Book</th>
+          <th>Condition</th>
+          <th>Offer</th>
+          <th>Expiration</th>
+          <th>User</th>
+          <th></th>
+        </tr>
+        </thead>
 
-          <tbody>
-          {{#each buyOfferMatchList}}
-          <tr>
-            <td>{{book}}</td>
-            <td>{{condition}}</td>
-            <td>${{offer}}</td>
-            <td>{{ formatDate expirationDate }}<br>{{ formatTime expirationDate}}</td>
-            <td>{{studentID}}</td>
-            <td><a href="#" class="button1" style="font-size: 10px;">ACCEPT</a></td>
-          </tr>
-          {{/each}}
-          </tbody>
-        </table>
-      </div>
+        <tbody>
+        {{#each buyOfferMatchList}}
+        <tr>
+          <td>{{book}}</td>
+          <td>{{condition}}</td>
+          <td>${{offer}}</td>
+          <td>{{ formatDate expirationDate }}<br>{{ formatTime expirationDate}}</td>
+          <td>{{studentID}}</td>
+          <td>
+            {{#if isNotUser studentID}}
+            <a href="#" class="button1" style="font-size: 10px;">ACCEPT</a>
+            {{/if}}
+          </td>
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
     </div>
     <div class="col-md-2"></div>
   </div>
