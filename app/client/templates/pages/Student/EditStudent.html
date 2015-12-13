@@ -1,26 +1,30 @@
 <template name="EditStudent">
   {{#IfLoggedIn}}
-  <div class="row box1" style="background-image: url('/images/textbookheader.png'); background-size: cover;">
-    <div class="col-md-6 studentleft">
-      <div class="img-div" style="background-image: url({{pic}});"> </div>
-      <h4 style="text-transform: uppercase; text-align: center; color: black;">HELLO, {{email}}</h4>
-      <span style="font-weight: bold;">First Name: </span> {{first}} <br>
-      <span style="font-weight: bold;">Last Name: </span> {{last}}
-    </div>
+  <div class="row" style="background-image: url('/images/textbookheader.png'); background-size: cover; padding-top:
+  110px; padding-bottom: 50px;">
+    <div class="col-md-3"></div>
 
-    <div class="col-md-6 studentright" style="background-color: white;">
+    <div class="col-md-6">
+      <div class="img-div" style="background-image: url({{pic}}); margin-bottom: 35px;"> </div>
+      <h2
+          style="font-size: 34px; text-transform: uppercase; text-align: center; color: black; margin-bottom: 35px;">HELLO,
+        {{email}}</h2>
       <div class="well studentc">
-        {{#autoForm id="EditStudent" type="method-update" collection="Student"
+        {{#autoForm id="EditStudentForm" type="method-update" collection="Student"
         doc=this meteormethod="editStudent"}}
         {{> afQuickField name="first"}}
         {{> afQuickField name="last"}}
         {{> afQuickField name="pic"}}
         {{> afQuickField name="notif"}}
 
-        <button type="submit" class="btn btn-primary">UPDATE</button>
+        <div style="text-align: center;">
+          <button type="submit" class="btn btn-primary">UPDATE</button>
+        </div>
         {{/autoForm}}
       </div>
     </div>
+
+    <div class="col-md-3"></div>
   </div>
   {{/IfLoggedIn}}
 </template>

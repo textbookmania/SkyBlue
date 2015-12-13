@@ -10,7 +10,8 @@ AutoForm.hooks({
      * @param result The result of form submission.
      */
     onSuccess: function(formType, result) {
-      Router.go('Home');
+      alert('Your profile has been updated!');
+      Router.go('EditStudent');
     }
   }
 });
