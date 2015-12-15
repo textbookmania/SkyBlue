@@ -21,9 +21,9 @@
         <td>{{ formatDate expirationDate }}<br>{{ formatTime expirationDate}}</td>
         <td>{{studentID}}</td>
         <td>
-          <!-- {{#if isNotUser studentID}} -->
+          {{#if isNotUser studentID}}
          <a href="#" class="button1 accept2" style="font-size: 10px;">SELL</a>
-          <!-- {{/if}} -->
+          {{/if}}
        </td>
      </tr>
      {{/each}}
