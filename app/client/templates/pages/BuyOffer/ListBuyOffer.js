@@ -31,7 +31,7 @@ Template.ListBuyOffer.events({
         this.studentID + "@hawaii.edu",
         'SkyBlue@textbookmania.com',
         'Your textbook offer has been accepted ',
-        'Your Buy Offer has been accepted by: ' + Meteor.user().profile.name + '\n');
+        'Your Buy Offer has been accepted by: ' + Meteor.user().profile.name + '\n' + "Offer for: " +this.book);
 
     alert("Your request has been sent");
     /*
