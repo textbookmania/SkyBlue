@@ -3,6 +3,22 @@
  */
 
 if(Meteor.isClient){
+    Template.email.events({
+        'submit #email-form': function(e,t){
+            e.preventDefault();
+
+            var toAddr = t.find('#inputEmail').value;
+            var subj = t.find('#inputSubject').value;
+            var body = t.find('#inputBody').value;
+
+            Meteor.call('sendEmail',
+                toAddr,
+                'SkyBlue@textbookmania.com',
+                subj,
+                'Your offer has been accepted' + body  );
+        }
+    })
+   /*
     Meteor.call('sendEmail',
         'aljonp@hawaii.edu',
         'SkyBlue@textbookmania.com',
@@ -21,6 +37,7 @@ if(Meteor.isClient){
         'Hello from SkyBlue!',
         'Your offer has been accepted');
     console.log("email sent");
+    */
 }
 
 
