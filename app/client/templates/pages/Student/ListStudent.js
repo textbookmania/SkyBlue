@@ -16,7 +16,7 @@ Template.ListStudent.events({
   'click .deletestudent': function(e) {
     e.preventDefault();
 
-    if (confirm("Delete this post?")) {
+    if (confirm("Ban this student?")) {
       var currentPostId = this._id;
       var username = this.email;
 
