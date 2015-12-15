@@ -26,14 +26,27 @@ Template.ListBuyOffer.events({
   'click .accept2': function (e) {
     e.preventDefault();
 
+    if(this.notif) {
+      Meteor.call('sendEmail',
+          this.studentID + "@hawaii.edu",
+          'SkyBlue@textbookmania.com',
+          'Your textbook offer has been accepted ',
+          'Your Buy Offer has been accepted by: ' + Meteor.user().profile.name + '\n' + "Title: " + this.book
+          + '\n' + "Offer: " + this.offer );
 
-    Meteor.call('sendEmail',
-        this.studentID + "@hawaii.edu",
-        'SkyBlue@textbookmania.com',
-        'Your textbook offer has been accepted ',
-        'Your Buy Offer has been accepted by: ' + Meteor.user().profile.name + '\n' + "Offer for: " +this.book);
+    }
 
     alert("Your request has been sent");
+
+    AcceptedOffers.insert(
+        {
+          studentAccept: Meteor.user().profile.name,
+          book: this.book,
+          offer: this.offer,
+          condition: this.condition,
+          studentID: this.studentID
+        }
+    );
     /*
      Grab all the values.
      Put it into a variable.
