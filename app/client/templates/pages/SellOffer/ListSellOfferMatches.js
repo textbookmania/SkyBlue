@@ -8,12 +8,15 @@ Template.ListSellOfferMatches.helpers({
   sellOfferMatchList: function () {
     return SellOfferMatchList;
   },
+
   formatDate: function (date) {
     return moment(date).format('ll');
   },
+
   formatTime: function (date) {
     return moment(date).format('h:mm a');
   },
+
   isNotUser: function (studentname) {
     return studentname !== Meteor.user().profile.name;
   }
@@ -28,19 +31,22 @@ Template.AddSellOffer.events({
     var currCond = AutoForm.getFieldValue('condition', 'AddSellOfferForm');
     var currDate = new Date();
 
-
     if (currOffer == null && currCond == null) {
       SellOfferMatchList =  BuyOffer.find({book: BookName, expirationDate: {$gt: currDate}});
     }
+
     else if (currOffer == null) {
       SellOfferMatchList =  BuyOffer.find({book: BookName, condition: { $in: [currCond, "Don't Care"] }, expirationDate: {$gt: currDate}});
     }
+
     else if (currCond == null) {
       SellOfferMatchList =  BuyOffer.find({book: BookName, offer: { $gte : currOffer}, expirationDate: {$gt: currDate} });
     }
+
     else {
       SellOfferMatchList =  BuyOffer.find({book: BookName, offer: { $gte : currOffer}, condition: { $in: [currCond, "Don't Care"] }, expirationDate: {$gt: currDate}});
     }
+
     Router.go('ListSellOfferMatches');
   }
 });

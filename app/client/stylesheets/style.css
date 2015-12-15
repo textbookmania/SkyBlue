@@ -8,11 +8,9 @@ body {
 
 .container-fluid {
   padding: 0;
-
 }
 
 /** NAVBAR SETTINGS **/
-
 
 nav.navbar.navbar-inverse.navbar-fixed-top {
   min-height: 73px !important;

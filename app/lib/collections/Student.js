@@ -16,8 +16,6 @@ Accounts.onLogin(function () {
   }
 });
 
-
-
 Meteor.methods({
   /**
    * Invoked by AutoForm to add a new BuyOffer record.
@@ -27,8 +25,8 @@ Meteor.methods({
     check(doc, Student.simpleSchema());
     Student.insert(doc);
   },
+
   /**
-   *
    * Invoked by AutoForm to update a BuyOffer record.
    * @param doc The BuyOffer document.
    * @param docID It's ID.
@@ -50,7 +48,6 @@ if (Meteor.isServer) {
   });
 }
 
-
 Student.attachSchema(new SimpleSchema({
   first: {
     label: "First Name",
@@ -62,6 +59,7 @@ Student.attachSchema(new SimpleSchema({
       palceholder: "First Name"
     }
   },
+
   last: {
     label: "Last Name",
     type: String,
@@ -72,6 +70,7 @@ Student.attachSchema(new SimpleSchema({
       palceholder: "Last Name"
     }
   },
+
   email: {
     label: "UHID",
     type: String,
@@ -82,6 +81,7 @@ Student.attachSchema(new SimpleSchema({
       palceholder: "UHID"
     }
   },
+
   pic: {
     label: "Pic URL",
     type: String,
@@ -91,6 +91,7 @@ Student.attachSchema(new SimpleSchema({
       palceholder: "Pic URL"
     }
   },
+
   notif: {
     label: "Email Notifications",
     type: Boolean,

@@ -1,9 +1,7 @@
 
 //TODO: Put this into a collection and allow admins to modify this value.
-//TODO: Clean out comments within the code.
 
 var expirationIN = 1; //Expired in 1 day from the day that a document was created.
-
 
 buyoffer = "BuyOffer";  // avoid typos, this string occurs many times.
 
@@ -18,8 +16,8 @@ Meteor.methods({
     check(doc, BuyOffer.simpleSchema());
     BuyOffer.insert(doc);
   },
+
   /**
-   *
    * Invoked by AutoForm to update a BuyOffer record.
    * @param doc The BuyOffer document.
    * @param docID It's ID.
@@ -41,31 +39,16 @@ if (Meteor.isServer) {
   });
 }
 
-//allowedBooks = [];
-
 /**
  * Create the schema for BuyOffer
  * See: https://github.com/aldeed/meteor-autoform#common-questions
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
-
 SimpleSchema.messages({
   "duplicateBuy": "You already have the same offer in Sell Offer"
 });
 
 BuyOffer.attachSchema(new SimpleSchema({
-  /*
-  title: {
-    label: "Title",
-    type: String,
-    optional: false,
-    max: 20,
-    autoform: {
-      group: buyoffer,
-      placeholder: "Title"
-    }
-  },
-  */
   book:{
     type: String,
     autoform:{
@@ -82,42 +65,20 @@ BuyOffer.attachSchema(new SimpleSchema({
             value: value
           }
         })
-      },
-
+      }
     },
+
     custom: function(){
       var bkk = this.valueOf('book').value;
-
-
       var offer = SellOffer.find({studentID: Meteor.user().profile.name,book :bkk}).fetch();
+
       if(offer === undefined || offer.length == 0);
+
       else
         return "duplicateBuy";
+    }
+  },
 
-    }
-  },
-  /*
-  author: {
-    label: "Author",
-    type: String,
-    optional: false,
-    autoform: {
-      type: "hidden",
-      group: buyoffer,
-      placeholder: "Author"
-    }
-  },
-  isbn: {
-    label: "ISBN",
-    type: Number,
-    optional: false,
-    autoform: {
-      type: "hidden",
-      group: buyoffer,
-      placeholder: "ISBN"
-    }
-  },
-  */
   offer: {
     label: "Offer",
     type: Number,
@@ -127,6 +88,7 @@ BuyOffer.attachSchema(new SimpleSchema({
       placeholder: "Offer"
     }
   },
+
   condition: {
     label: "Condition",
     type: String,
@@ -134,6 +96,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     allowedValues: [
       "Excellent", "Good", "Fair", "Poor", "Don't Care"
     ],
+
     autoform: {
       group: buyoffer,
       afFieldInput: {
@@ -142,21 +105,24 @@ BuyOffer.attachSchema(new SimpleSchema({
       placeholder: "Condition"
     }
   },
+
   expirationDate: {
     type: Date,
     label: "Expiration",
     optional: true,
     autoValue: function(){
-      d = new Date()
+      d = new Date();
       d.setDate(d.getDate() + expirationIN);
       return d;
     },
+
     autoform: {
       type: "hidden",
       group: buyoffer,
       placeholder: "Expiration Date"
     }
   },
+
   studentID: {
     type: String,
     label: "Student",
@@ -164,6 +130,7 @@ BuyOffer.attachSchema(new SimpleSchema({
     autoValue: function() {
         return Meteor.user().profile.name;
     },
+
     autoform: {
       type: "hidden",
       group: buyoffer,

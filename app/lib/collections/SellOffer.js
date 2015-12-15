@@ -1,9 +1,7 @@
 
 //TODO: Put this into a collection and allow admins to modify this value.
-//TODO: Clean out comments within the code.
 
 var expirationINS = 1; //Expired in 1 day from the day that a document was created.
-
 
 selloffer = "SellOffer";  // avoid typos, this string occurs many times.
 
@@ -18,8 +16,8 @@ Meteor.methods({
     check(doc, SellOffer.simpleSchema());
     SellOffer.insert(doc);
   },
+
   /**
-   *
    * Invoked by AutoForm to update a sellOffer record.
    * @param doc The SellOffer document.
    * @param docID It's ID.
@@ -41,31 +39,16 @@ if (Meteor.isServer) {
   });
 }
 
-//allowedBooks = [];
-
 /**
  * Create the schema for SellOffer
  * See: https://github.com/aldeed/meteor-autoform#common-questions
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
-
 SimpleSchema.messages({
   "duplicateSell": "You already have the same offer in Buy Offer"
 });
 
 SellOffer.attachSchema(new SimpleSchema({
-  /*
-  title: {
-    label: "Title",
-    type: String,
-    optional: false,
-    max: 20,
-    autoform: {
-      group: selloffer,
-      placeholder: "Title"
-    }
-  },
-  */
   book:{
     type: String,
     autoform:{
@@ -84,39 +67,18 @@ SellOffer.attachSchema(new SimpleSchema({
         })
       }
     },
+
     custom: function(){
       var bkk = this.valueOf('book').value;
-
-
       var offer = BuyOffer.find({studentID: Meteor.user().profile.name,book :bkk}).fetch();
+
       if(offer === undefined || offer.length == 0);
+
       else
         return "duplicateSell";
+    }
+  },
 
-    }
-  },
-  /*
-  author: {
-    label: "Author",
-    type: String,
-    optional: false,
-    autoform: {
-      type: "hidden",
-      group: selloffer,
-      placeholder: "Author"
-    }
-  },
-  isbn: {
-    label: "ISBN",
-    type: Number,
-    optional: false,
-    autoform: {
-      type: "hidden",
-      group: selloffer,
-      placeholder: "ISBN"
-    }
-  },
-  */
   offer: {
     label: "Offer",
     type: Number,
@@ -126,6 +88,7 @@ SellOffer.attachSchema(new SimpleSchema({
       placeholder: "Offer"
     }
   },
+
   condition: {
     label: "Condition",
     type: String,
@@ -133,6 +96,7 @@ SellOffer.attachSchema(new SimpleSchema({
     allowedValues: [
       "Excellent", "Good", "Fair", "Poor"
     ],
+
     autoform: {
       group: selloffer,
       afFieldInput: {
@@ -141,21 +105,24 @@ SellOffer.attachSchema(new SimpleSchema({
       placeholder: "Condition"
     }
   },
+
   expirationDate: {
     type: Date,
     label: "Expiration",
     optional: true,
     autoValue: function(){
-      d = new Date()
+      d = new Date();
       d.setDate(d.getDate() + expirationINS);
       return d;
     },
+
     autoform: {
       type: "hidden",
       group: selloffer,
       placeholder: "Expiration Date"
     }
   },
+
   studentID: {
     type: String,
     label: "Student",
@@ -163,6 +130,7 @@ SellOffer.attachSchema(new SimpleSchema({
     autoValue: function() {
       return Meteor.user().profile.name;
     },
+
     autoform: {
       type: "hidden",
       group: selloffer,

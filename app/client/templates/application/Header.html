@@ -15,15 +15,12 @@
         <ul class="nav navbar-nav">
           <li class="{{#if isCurrentPage 'About'}}active{{/if}}"><a  href="{{ pathFor 'About' }}">ABOUT US</a></li>
           <li class="{{#if isCurrentPage 'Help'}}active{{/if}}"><a href="{{ pathFor 'Help' }}">HELP</a></li>
-          {{#if currentUser}}
-          <li class="{{#if isCurrentPage 'ListTextBook'}}active{{/if}}"><a href="{{ pathFor 'ListTextBook' }}">TEXTBOOK
-          </a></li>
-          <li class="{{#if isCurrentPage 'BuyOffer'}}active{{/if}}"><a href="{{ pathFor 'BuyOffer' }}">BUY
-            OFFER</a></li>
-          <li class="{{#if isCurrentPage 'SellOffer'}}active{{/if}}"><a href="{{ pathFor 'SellOffer' }}">SELL
-            OFFER</a></li>
-          {{/if}}
 
+          {{#if currentUser}}
+          <li class="{{#if isCurrentPage 'ListTextBook'}}active{{/if}}"><a href="{{ pathFor 'ListTextBook' }}">TEXTBOOK</a></li>
+          <li class="{{#if isCurrentPage 'BuyOffer'}}active{{/if}}"><a href="{{ pathFor 'BuyOffer' }}">BUY OFFER</a></li>
+          <li class="{{#if isCurrentPage 'SellOffer'}}active{{/if}}"><a href="{{ pathFor 'SellOffer' }}">SELL OFFER</a></li>
+          {{/if}}
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

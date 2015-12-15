@@ -3,6 +3,7 @@
     "baseUrl": "https://cas-test.its.hawaii.edu/cas/",
     "autoClose": true
   },
+
   "public": {
     "cas": {
       "loginUrl": "https://cas-test.its.hawaii.edu/cas/login",
@@ -11,6 +12,7 @@
       "popupHeight": 610
     }
   },
+
   "allowed_users": [
     "skchun",
     "johnson",
@@ -19,6 +21,7 @@
     "khongnaw",
     "kayama"
   ],
+
   "admin_users": [
     "aljonp",
     "khongnaw",

@@ -1,5 +1,3 @@
-
-
 Template.ViewYourOffers.helpers({
 
   /**
@@ -12,6 +10,7 @@ Template.ViewYourOffers.helpers({
   viewSellOffers: function () {
     return SellOffer.find({studentID: Meteor.user().profile.name})
   },
+
   formatDate: function (date) {
     var currDate = new Date();
     var newDate = moment(date).format('ll');
@@ -19,18 +18,20 @@ Template.ViewYourOffers.helpers({
       newDate = newDate.fontcolor("red");
       return newDate;
     }
+
     return newDate;
   },
+
   formatTime: function (date) {
     var currDate = new Date();
-    var newDate = moment(date).format('h:mm a');;
+    var newDate = moment(date).format('h:mm a');
     if (date <= currDate) {
       newDate = newDate.fontcolor("red");
       return newDate;
     }
+
     return newDate;
   }
-
 });
 
 Template.ViewYourOffers.events({
@@ -43,6 +44,7 @@ Template.ViewYourOffers.events({
       Router.go('ViewYourOffers');
     }
   },
+
   'click .deletesell': function(e) {
     e.preventDefault();
 
