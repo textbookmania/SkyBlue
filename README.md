@@ -3,10 +3,11 @@
 SkyBlue Textbook Exchange is a student made website that allows the University of Hawaii at Manoa's Information and Computer Sciences (ICS) students to find, buy, and sell textbooks from various ICS classes.
 
 # Installation
-1. Download the zip or tar package from our [GitHub Page](http://textbookmania.github.io/SkyBlue/) to retrieve the web application files.
-2. Extract the files to a directory of your choice.
-3. Change to the directory that you placed the files in and then move to the app directory within the web application.
-4. To invoke the application for the first time, use:
+1. Install [Meteor](https://www.meteor.com/install).
+2. Download the zip or tar package from our [GitHub Page](http://textbookmania.github.io/SkyBlue/) to retrieve the web application files.
+3. Extract the files to a directory of your choice.
+4. Change to the directory that you placed the files in and then move to the app directory within the web application.
+5. To invoke the application for the first time, use:
 
 ```
 meteor --settings ../config/settings.development.json
