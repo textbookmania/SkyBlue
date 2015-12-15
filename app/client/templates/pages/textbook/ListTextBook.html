@@ -3,8 +3,8 @@
   <div class="row">
     {{#each textbookList}}
     <div class="col-lg-3" style="height: 380px;">
-      <div class="house">
-        <div style="text-align: center;">
+      <div class="house" style="text-align: center;">
+        <div>
           <img src= "http://images.amazon.com/images/P/{{isbn}}.01._SCMZZZZZZZ_.jpg" alt="Image not available">
         </div>
         <span class="bookdesc">Course:</span> {{course}} <br>
@@ -13,7 +13,7 @@
         <span class="bookdesc">Author:</span> {{author}} <br><br>
 
         {{#if isInRole 'admin'}}
-        <div style="text-align: center;">
+        <div>
         <a class="button2" style="font-size: 12px" href="{{ pathFor 'EditTextBook' }}">EDIT</a>
         <a class="button2 deleteTextbook" style="font-size: 12px" href="#">DELETE</a>
         </div>
