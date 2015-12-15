@@ -19,4 +19,15 @@ Template.ListSellOffer.helpers({
   isNotUser: function (studentname) {
     return studentname !== Meteor.user().profile.name;
   }
+
+});
+
+
+Template.ListSellOffer.events({
+
+  'submit': function (e) {
+    e.preventDefault();
+
+    console.log("clicked");
+  }
 });

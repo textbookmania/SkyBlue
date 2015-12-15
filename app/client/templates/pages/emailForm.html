@@ -1,17 +1,19 @@
-
-<template name="emailTest">
+<template name="emailForm">
 
     <div class="row" id="featuretitle" style="padding-top: 100px; margin-bottom: 25px; padding-bottom: 0;">
         <h1>EMAIL TEST</h1>
+        {{#IfLoggedIn}}
         <div class = "container">
             {{> email}}
         </div>
+        {{/IfLoggedIn}}
 
     </div>
 
 </template>
 
 <template name = "email">
+    {{#IfLoggedIn}}
     <div class = "container">
         <form role="form" id="email-form">
             <div class = "form-group">
@@ -32,4 +34,5 @@
 
         </form>
     </div>
+    {{/IfLoggedIn}}
 </template>

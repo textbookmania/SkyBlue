@@ -125,8 +125,8 @@ Router.route('/selloffer-edit/:_id', {
   data: function() { return SellOffer.findOne(this.params._id); }
 });
 
-Router.route('/emailtest', {
-  name: 'emailTest'
+Router.route('/emailform', {
+  name: 'emailForm'
 });
 
 

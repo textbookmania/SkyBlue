@@ -3,6 +3,7 @@
  */
 
 if(Meteor.isClient){
+
     Template.email.events({
         'submit #email-form': function(e,t){
             e.preventDefault();
@@ -17,29 +18,11 @@ if(Meteor.isClient){
                 'Your textbook offer has been accepted ',
                 'Your offer has been accepted by: ' + Meteor.user().profile.name + '\n' + "user message: \n"  + body  );
 
+            console.log(e.book);
             console.log("address: " + toAddr + "sub: " + subj + " " + Meteor.user().profile.name);
         }
     });
-   /*
-    Meteor.call('sendEmail',
-        'aljonp@hawaii.edu',
-        'SkyBlue@textbookmania.com',
-        'Hello from SkyBlue!',
-        'Your offer has been accepted');
 
-    Meteor.call('sendEmail',
-        'kayama@hawaii.edu',
-        'SkyBlue@textbookmania.com',
-        'Hello from SkyBlue!',
-        'Your offer has been accepted');
-
-    Meteor.call('sendEmail',
-        'Android.prok@gmail.com',
-        'SkyBlue@textbookmania.com',
-        'Hello from SkyBlue!',
-        'Your offer has been accepted');
-    console.log("email sent");
-    */
 }
 
 
