@@ -38,7 +38,6 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
   background-position: bottom;
   background-size: cover;
   text-align: center;
-  padding-bottom: 40px;
 }
 
 /************************/
@@ -151,11 +150,9 @@ hr {
 #featuretitle {
   padding-top: 10px;
   text-align: center;
-  background-color: white;
 }
 
 .features {
-  background-color: white;
   text-align: center;
 }
 
