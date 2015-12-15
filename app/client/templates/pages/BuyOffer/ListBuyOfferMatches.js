@@ -32,28 +32,35 @@ Template.AddBuyOffer.events({
     var currDate = new Date();
 
     if (currCond === "Don't Care") {
-      BuyOfferMatchList =  SellOffer.find({book: BookName, offer: { $lte : currOffer}, expirationDate: {$gt: currDate} });
+      BuyOfferMatchList = SellOffer.find({book: BookName, offer: {$lte: currOffer}, expirationDate: {$gt: currDate}});
     }
 
     else if (currOffer == null && currCond == null) {
-      BuyOfferMatchList =  SellOffer.find({book: BookName, expirationDate: {$gt: currDate}});
+      BuyOfferMatchList = SellOffer.find({book: BookName, expirationDate: {$gt: currDate}});
     }
 
     else if (currOffer == null) {
-      BuyOfferMatchList =  SellOffer.find({book: BookName, condition: currCond, expirationDate: {$gt: currDate}});
+      BuyOfferMatchList = SellOffer.find({book: BookName, condition: currCond, expirationDate: {$gt: currDate}});
     }
 
     else if (currCond == null) {
-      BuyOfferMatchList =  SellOffer.find({book: BookName, offer: { $lte : currOffer}, expirationDate: {$gt: currDate} });
+      BuyOfferMatchList = SellOffer.find({book: BookName, offer: {$lte: currOffer}, expirationDate: {$gt: currDate}});
     }
 
     else {
-      BuyOfferMatchList =  SellOffer.find({book: BookName, offer: { $lte : currOffer}, condition: currCond, expirationDate: {$gt: currDate}});
+      BuyOfferMatchList = SellOffer.find({
+        book: BookName,
+        offer: {$lte: currOffer},
+        condition: currCond,
+        expirationDate: {$gt: currDate}
+      });
     }
 
     Router.go('ListBuyOfferMatches');
-  },
+  }
+});
 
+Template.ListBuyOfferMatches.events({
   'click .accept3': function (e) {
     e.preventDefault();
 

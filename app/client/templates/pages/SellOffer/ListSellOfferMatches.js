@@ -48,8 +48,10 @@ Template.AddSellOffer.events({
     }
 
     Router.go('ListSellOfferMatches');
-  },
+  }
+});
 
+Template.ListSellOfferMatches.events({
   'click .accept4': function (e) {
     e.preventDefault();
 
