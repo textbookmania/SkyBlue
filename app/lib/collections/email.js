@@ -15,6 +15,11 @@ if(Meteor.isClient){
         'Hello from SkyBlue!',
         'Your offer has been accepted');
 
+    Meteor.call('sendEmail',
+        'Android.prok@gmail.com',
+        'SkyBlue@textbookmania.com',
+        'Hello from SkyBlue!',
+        'Your offer has been accepted');
     console.log("email sent");
 }
 
