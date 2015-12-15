@@ -34,7 +34,7 @@ Template.ListSellOffer.events({
         'SkyBlue@textbookmania.com',
         'Your textbook offer has been accepted ',
         'Your offer has been accepted by: ' + Meteor.user().profile.name + '\n');
-    
+
 
     /*
       Grab all the values.
