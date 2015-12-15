@@ -25,9 +25,28 @@ Template.ListSellOffer.helpers({
 
 Template.ListSellOffer.events({
 
-  'submit': function (e) {
+  'click .accept': function (e) {
     e.preventDefault();
 
-    console.log("clicked");
+    console.log(this.book);
+
+    /*
+      Grab all the values.
+      Put it into a variable.
+      acceptedUser = Meteor.user().profile.name;
+      Use the email function.
+
+      Append string username with @hawaii.edu
+
+      check if notif is true or false
+
+      if true,
+      send email
+
+      insert to acceptedoffers collection
+
+     ViewAcceptedOffers.insert({grab all values and plug into item, MAKE SURE TO GRAB USER WHO CLICKED IT});
+
+     */
   }
 });

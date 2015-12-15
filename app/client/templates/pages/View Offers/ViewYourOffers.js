@@ -3,6 +3,13 @@ Template.ViewYourOffers.helpers({
   /**
    * @returns {*} All of the Contact documents.
    */
+   /* viewAcceptedOffers: function() {
+        return ViewAcceptedOffers.find({studentID: Meteor.user().profile.name});
+
+        // Make sure acceptedperson is some other key.
+      }
+    */
+
   viewBuyOffers: function () {
     return BuyOffer.find({studentID: Meteor.user().profile.name});
   },
