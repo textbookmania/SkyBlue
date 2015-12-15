@@ -35,7 +35,7 @@ Template.ListSellOffer.events({
         'Your textbook offer has been accepted ',
         'Your offer has been accepted by: ' + Meteor.user().profile.name + '\n');
 
-
+    alert("Your request has been sent");
     /*
       Grab all the values.
       Put it into a variable.
