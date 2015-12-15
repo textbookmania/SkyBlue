@@ -14,8 +14,13 @@ Template.ListStudent.events({
 
     if (confirm("Delete this post?")) {
       var currentPostId = this._id;
+      console.log(this.email);
+      var username = this.email;
+
+      BanStud.insert({email: username});
+      /*
       Meteor.call("deleteStudent", currentPostId);
-      Router.go('ListStudent');
+      Router.go('ListStudent'); */
     }
   }
 });
