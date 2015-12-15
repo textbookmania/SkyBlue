@@ -3,12 +3,10 @@ Template.ViewYourOffers.helpers({
   /**
    * @returns {*} All of the Contact documents.
    */
-   /* viewAcceptedOffers: function() {
-        return ViewAcceptedOffers.find({studentID: Meteor.user().profile.name});
 
-        // Make sure acceptedperson is some other key.
-      }
-    */
+  viewAcceptedOffer: function(){
+    return AcceptedOffers.find({studentID: Meteor.user().profile.name});
+  },
 
   viewBuyOffers: function () {
     return BuyOffer.find({studentID: Meteor.user().profile.name});
@@ -58,6 +56,16 @@ Template.ViewYourOffers.events({
     if (confirm("Delete this post?")) {
       var currentPostId = this._id;
       Meteor.call("deleteSellOffer", currentPostId);
+      Router.go('ViewYourOffers');
+    }
+  },
+
+  'click .deleteaccept': function(e) {
+    e.preventDefault();
+
+    if (confirm("Delete this accept?")) {
+      var currentPostId = this._id;
+      Meteor.call("deleteAcceptedOffers", currentPostId);
       Router.go('ViewYourOffers');
     }
   }

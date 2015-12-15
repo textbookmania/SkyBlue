@@ -2,6 +2,35 @@
   {{#IfLoggedIn}}
   <div style="background-image: url('/images/library1.png'); padding-top: 100px; background-size: cover;">
     <div class="row" style="padding-left: 10%; padding-right: 10%;">
+      <h1 style="text-align: center; margin-bottom: 10px">ACCEPTED OFFER</h1>
+      <table class="table table-hover" style="background-color: white; border-top: 5px solid #00AFDD;">
+        <thead>
+        <tr>
+          <th>Student</th>
+          <th>Book</th>
+          <th>Offer</th>
+          <th>Condition</th>
+          <th>Student ID</th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each viewAcceptedOffer}}
+        <tr>
+          <td>{{studentAccept}}</td>
+          <td>{{book}}</td>
+          <td>{{offer}}</td>
+          <td>{{{studentID}}}</td>
+          <td>{{{condition}}}</td>
+          <td><a class="button2 deleteaccept" style="font-size: 10px" href="#">DELETE</a></td>
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row" style="padding-left: 10%; padding-right: 10%;">
       <h1 style="text-align: center; margin-bottom: 10px">BUY OFFERS</h1>
       <table class="table table-hover" style="background-color: white; border-top: 5px solid #00AFDD;">
         <thead>
