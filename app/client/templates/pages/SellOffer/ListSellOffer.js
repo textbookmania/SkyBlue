@@ -28,7 +28,13 @@ Template.ListSellOffer.events({
   'click .accept': function (e) {
     e.preventDefault();
 
-    console.log(this.book);
+
+    Meteor.call('sendEmail',
+        this.studentID + "@hawaii.edu",
+        'SkyBlue@textbookmania.com',
+        'Your textbook offer has been accepted ',
+        'Your offer has been accepted by: ' + Meteor.user().profile.name + '\n');
+    
 
     /*
       Grab all the values.
