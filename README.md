@@ -15,7 +15,7 @@ meteor --settings ../config/settings.development.json
 Your running application can be found at [http://localhost:3000](http://localhost:3000).
 
 # Usage
-To start using our deployed website, go here (put meteor link here).
+To start using our deployed website, go [here](http://skybluetextbookexchange.meteor.com/).
 
 # Credits
 Based upon the [meteor-application-template](http://ics-software-engineering.github.io/meteor-application-template/).
