@@ -34,11 +34,10 @@ Template.ListSellOffer.events({
       Meteor.call('sendEmail',
           this.studentID + "@hawaii.edu",
           'SkyBlue@textbookmania.com',
-          'Your textbook offer has been accepted ',
+          'Your textbook offer has been accepted!',
           'Your Sell Offer has been accepted by: ' + Meteor.user().profile.name + '\n' + "Title: " + this.book
           + '\n' + "Offer: " + this.offer );
     }
-
 
     AcceptedOffers.insert(
         {studentAccept: Meteor.user().profile.name,
@@ -48,6 +47,6 @@ Template.ListSellOffer.events({
           studentID: this.studentID}
     );
 
-    alert("Your request has been sent");
+    alert("Your request has been sent!");
   }
 });
