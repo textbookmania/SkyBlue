@@ -31,7 +31,6 @@ Template.ListSellOffer.events({
     studentnotif = Student.findOne({email: this.studentID}).notif;
 
     if(studentnotif) {
-      console.log('hey');
       Meteor.call('sendEmail',
           this.studentID + "@hawaii.edu",
           'SkyBlue@textbookmania.com',
