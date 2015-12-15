@@ -46,6 +46,12 @@ Router.configure({
   loadingTemplate: 'Loading'
 });
 
+Router.configure({
+  layoutTemplate: 'Layout',
+  waitOn: function() { return Meteor.subscribe("AcceptedOffers"); },
+  loadingTemplate: 'Loading'
+});
+
 Router.route('/', {
   name: 'Home'
 });
