@@ -4,10 +4,16 @@
 
 if(Meteor.isClient){
     Meteor.call('sendEmail',
-        'Android.prok@gmail.com',
-        'bob@example.com',
-        'Hello from Meteor!',
-        'This is a test of Email.send.');
+        'aljonp@hawaii.edu',
+        'SkyBlue@textbookmania.com',
+        'Hello from SkyBlue!',
+        'Your offer has been accepted');
+
+    Meteor.call('sendEmail',
+        'kayama@hawaii.edu',
+        'SkyBlue@textbookmania.com',
+        'Hello from SkyBlue!',
+        'Your offer has been accepted');
 
     console.log("email sent");
 }
