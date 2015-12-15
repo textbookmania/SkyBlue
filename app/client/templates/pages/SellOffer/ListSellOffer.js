@@ -28,8 +28,10 @@ Template.ListSellOffer.events({
   'click .accept': function (e) {
     e.preventDefault();
 
+    studentnotif = Student.findOne({email: this.studentID}).notif;
 
-    if(this.notif === true) {
+    if(studentnotif) {
+      console.log('hey');
       Meteor.call('sendEmail',
           this.studentID + "@hawaii.edu",
           'SkyBlue@textbookmania.com',
@@ -38,7 +40,6 @@ Template.ListSellOffer.events({
           + '\n' + "Offer: " + this.offer );
     }
 
-    alert("Your request has been sent");
 
     AcceptedOffers.insert(
         {studentAccept: Meteor.user().profile.name,
@@ -47,23 +48,7 @@ Template.ListSellOffer.events({
          condition: this.condition,
           studentID: this.studentID}
     );
-      /*
-      Grab all the values.
-      Put it into a variable.
-      acceptedUser = Meteor.user().profile.name;
-      Use the email function.
 
-      Append string username with @hawaii.edu
-
-      check if notif is true or false
-
-      if true,
-      send email
-
-      insert to acceptedoffers collection
-
-     ViewAcceptedOffers.insert({grab all values and plug into item, MAKE SURE TO GRAB USER WHO CLICKED IT});
-
-     */
+    alert("Your request has been sent");
   }
 });
