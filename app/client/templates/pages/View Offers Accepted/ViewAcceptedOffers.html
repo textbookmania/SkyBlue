@@ -1,0 +1,63 @@
+<template name="ViewAcceptedOffers">
+    {{#IfLoggedIn}}
+    <div style="background-image: url('/images/library1.png'); padding-top: 100px; background-size: cover;">
+        <div class="row" style="padding-left: 10%; padding-right: 10%;">
+            <h1 style="text-align: center; margin-bottom: 10px">BUY OFFERS</h1>
+            <table class="table table-hover" style="background-color: white; border-top: 5px solid #00AFDD;">
+                <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Condition</th>
+                    <th>Offer</th>
+                    <th>Expiration</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{#each viewBuyOffers}}
+                <tr>
+                    <td>{{book}}</td>
+                    <td>{{condition}}</td>
+                    <td>${{offer}}</td>
+                    <td>{{{ formatDate expirationDate }}}<br>{{{ formatTime expirationDate }}}</td>
+                    <td><a class="button2" style="font-size: 10px" href="{{pathFor 'EditBuyOffer'}}">EDIT/RENEW</a></td>
+                    <td><a class="button2 deletebuy" style="font-size: 10px" href="#">DELETE</a></td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row" style="padding-left: 10%; padding-right: 10%;">
+            <h1 style="text-align: center; margin-bottom: 10px">SELL OFFERS</h1>
+            <table class="table table-hover" style="background-color: white; border-top: 5px solid #00AFDD;">
+                <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Condition</th>
+                    <th>Offer</th>
+                    <th>Expiration</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{#each viewSellOffers}}
+                <tr>
+                    <td>{{book}}</td>
+                    <td>{{condition}}</td>
+                    <td>${{offer}}</td>
+                    <td>{{{ formatDate expirationDate }}}<br>{{{ formatTime expirationDate }}}</td>
+                    <td><a class="button2" style="font-size: 10px" href="{{pathFor 'EditSellOffer'}}">EDIT/RENEW</a></td>
+                    <td><a class="button2 deletesell" style="font-size: 10px" href="#">DELETE</a></td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/IfLoggedIn}}
+</template>
