@@ -24,21 +24,12 @@ Template.ListStudent.events({
         BuyOffer.remove({_id: doc._id});
       });
 
-<<<<<<< HEAD
-      SellOffer.find({studentID: username}).forEach( function() {console.log("Sell")});
-
-      //BanStud.insert({email: username});
-
-
-      /*
-=======
       SellOffer.find({studentID: username}).forEach( function(doc) {
         SellOffer.remove({_id: doc._id});
       });
 
       BanStud.insert({email: username});
 
->>>>>>> origin/master
       Meteor.call("deleteStudent", currentPostId);
       Router.go('ListStudent');
     }
