@@ -12,5 +12,24 @@
 </template>
 
 <template name = "email">
+    <div class = "container">
+        <form role="form" id="email-form">
+            <div class = "form-group">
+                <label for="inputEmail">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+            </div>
+            <div class = "form-group">
+                <label for="inputSubject">subject</label>
+                <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
+            </div>
+            <div class = "form-group">
+                <label for="inputBody">Body</label>
+                <input type="text" class="form-control" id="inputBody" placeholder="Body">
+            </div>
 
+            <button type="submit" class="btn btn-primary">Send Mail</button>
+
+
+        </form>
+    </div>
 </template>
