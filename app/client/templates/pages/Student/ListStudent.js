@@ -5,6 +5,10 @@ Template.ListStudent.helpers({
    */
   studentList: function () {
     return Student.find();
+  },
+
+  banList: function () {
+    return BanStud.find();
   }
 });
 
@@ -14,13 +18,28 @@ Template.ListStudent.events({
 
     if (confirm("Delete this post?")) {
       var currentPostId = this._id;
-      console.log(this.email);
       var username = this.email;
 
+      BuyOffer.find({studentID: username}).forEach( function(doc) {
+        BuyOffer.remove({_id: doc._id});
+      });
+
+      SellOffer.find({studentID: username}).forEach( function(doc) {
+        SellOffer.remove({_id: doc._id});
+      });
+
       BanStud.insert({email: username});
-      /*
+
       Meteor.call("deleteStudent", currentPostId);
-      Router.go('ListStudent'); */
+      Router.go('ListStudent');
     }
+  },
+
+  'click .unban': function(e) {
+    e.preventDefault();
+    var currentPostId = this._id;
+
+    Meteor.call("deleteBanStud", currentPostId);
+    Router.go('ListStudent');
   }
 });
