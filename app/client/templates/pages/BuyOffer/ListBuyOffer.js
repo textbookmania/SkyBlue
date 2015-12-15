@@ -26,7 +26,7 @@ Template.ListBuyOffer.events({
   'click .accept2': function (e) {
     e.preventDefault();
 
-    if(this.notif) {
+    if(this.notif === true) {
       Meteor.call('sendEmail',
           this.studentID + "@hawaii.edu",
           'SkyBlue@textbookmania.com',

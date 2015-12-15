@@ -29,7 +29,7 @@ Template.ListSellOffer.events({
     e.preventDefault();
 
 
-    if(this.notif) {
+    if(this.notif === true) {
       Meteor.call('sendEmail',
           this.studentID + "@hawaii.edu",
           'SkyBlue@textbookmania.com',
