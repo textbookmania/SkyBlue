@@ -14,10 +14,17 @@ Template.ListStudent.events({
 
     if (confirm("Delete this post?")) {
       var currentPostId = this._id;
-      console.log(this.email);
       var username = this.email;
 
-      BanStud.insert({email: username});
+      BuyOffer.find({studentID: username}).forEach( function(doc) {
+        BuyOffer.remove({_id: doc._id});
+      });
+
+      SellOffer.find({studentID: username}).forEach( function() {console.log("Sell")});
+
+      //BanStud.insert({email: username});
+
+
       /*
       Meteor.call("deleteStudent", currentPostId);
       Router.go('ListStudent'); */
