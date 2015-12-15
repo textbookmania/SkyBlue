@@ -16,8 +16,10 @@ if(Meteor.isClient){
                 'SkyBlue@textbookmania.com',
                 subj,
                 'Your offer has been accepted' + body  );
+
+            console.log("address: " + toAddr + "sub: " + subj);
         }
-    })
+    });
    /*
     Meteor.call('sendEmail',
         'aljonp@hawaii.edu',
