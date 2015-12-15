@@ -108,13 +108,10 @@ hr {
 }
 
 .house {
-  width: 60%;
   background-color: white;
   padding: 8px;
   border: 1px solid black;
   border-radius: 10px;
-  margin: auto !important;
-  margin-bottom: 15px !important;
 }
 
 .bookdesc {

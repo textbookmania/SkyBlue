@@ -1,22 +1,26 @@
 <template name="ListTextBook">
   <div class="fill"></div>
+  <div class="row">
     {{#each textbookList}}
-    <div class="row house">
-      <div class="col-md-4 imgdesc">
-        <img src= "http://images.amazon.com/images/P/{{isbn}}.01._SCMZZZZZZZ_.jpg" alt="Image not available">
-      </div>
-      <div class="col-md-8">
+    <div class="col-lg-3" style="height: 380px;">
+      <div class="house" style="text-align: center;">
+        <div>
+          <img src= "http://images.amazon.com/images/P/{{isbn}}.01._SCMZZZZZZZ_.jpg" alt="Image not available">
+        </div>
         <span class="bookdesc">Course:</span> {{course}} <br>
         <span class="bookdesc">ISBN:</span> {{isbn}} <br>
         <span class="bookdesc">Title:</span> {{title}} <br>
         <span class="bookdesc">Author:</span> {{author}} <br><br>
 
         {{#if isInRole 'admin'}}
+        <div>
         <a class="button2" style="font-size: 12px" href="{{ pathFor 'EditTextBook' }}">EDIT</a>
         <a class="button2 deleteTextbook" style="font-size: 12px" href="#">DELETE</a>
+        </div>
         {{/if}}
       </div>
     </div>
     {{/each}}
+  </div>
 
 </template>
