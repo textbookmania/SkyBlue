@@ -1,12 +1,9 @@
 <template name="ListStudent">
   {{#IfLoggedIn}}
   <div class="row" style="background-image: url('/images/textbookheader.png'); background-size: cover;">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+
+    <div class="col-md-10">
       <div class="bumper">
-        <div class="matchbox">
-          <h1 style="text-align: center; padding-bottom: 20px;">STUDENT LIST</h1>
-        </div>
         <table class="table table-hover" style="background-color: white; border-top: 5px solid #00AFDD;">
           <thead>
           <tr>
@@ -30,7 +27,32 @@
         </table>
       </div>
     </div>
-    <div class="col-md-2"></div>
+
+    <div class="col-md-2" style="background-color: rgba(250,250,250,0.7);">
+      <div class="bumper">
+        <div class="matchbox">
+          <h1 style="text-align: center; padding-bottom: 10px;">BANNED STUDENTS</h1>
+        </div>
+        <table class="table table-hover" style="background-color: white; border-top: 5px solid #00AFDD;">
+          <thead>
+          <tr>
+            <th>Email</th>
+            <th></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each banList}}
+          <tr>
+            <td>{{email}}</td>
+            <td><a class="unban button1" style="font-size: 10px" href="#">UNBAN</a></td>
+          </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
   {{/IfLoggedIn}}
 </template>
