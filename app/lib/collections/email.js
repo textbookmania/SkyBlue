@@ -14,10 +14,10 @@ if(Meteor.isClient){
             Meteor.call('sendEmail',
                 toAddr,
                 'SkyBlue@textbookmania.com',
-                subj,
-                'Your offer has been accepted' + body  );
+                'Your textbook offer has been accepted ',
+                'Your offer has been accepted by: ' + Meteor.user().profile.name + '\n' + "user message: \n"  + body  );
 
-            console.log("address: " + toAddr + "sub: " + subj);
+            console.log("address: " + toAddr + "sub: " + subj + " " + Meteor.user().profile.name);
         }
     });
    /*
